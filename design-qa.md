@@ -36,4 +36,12 @@
 
 - P3: none required for this annotation pass.
 
+## Continuous atlas pass
+
+- The atlas is part of the homepage document flow: `.atlas-transition` is immediately followed by `.atlas-section`.
+- There is no atlas navigation link, call-to-action button, menu, or custom keyboard handler; entry is by ordinary page scrolling only.
+- The complete atlas remains available in place with all 259 product cards and its search and filter controls.
+- The “一单一程” page, route, navigation item, table, and CSV export control are absent from the rendered site.
+- Desktop and 375 × 812 mobile checks found no console warning or error and no document-level horizontal overflow.
+
 final result: passed

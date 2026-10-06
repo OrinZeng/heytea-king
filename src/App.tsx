@@ -6,9 +6,7 @@ import {
   ChevronRight,
   CircleDollarSign,
   CupSoda,
-  Download,
   MapPin,
-  Menu,
   Search,
   SlidersHorizontal,
   Sparkles,
@@ -16,10 +14,10 @@ import {
   X,
 } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { Link, NavLink, Route, Routes, useLocation } from "react-router-dom";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { catalogResearchNote, orders, products, stores } from "./data/siteData";
 import aggregateData from "./data/aggregates.generated.json";
-import type { Order, Product } from "./types";
+import type { Product } from "./types";
 
 const ink = "#141414";
 const gold = "#bd8a59";
@@ -34,8 +32,7 @@ function App() {
       <SiteHeader />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/atlas" element={<AtlasPage />} />
-        <Route path="/orders" element={<OrdersPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
       <SiteFooter />
     </div>
@@ -43,7 +40,6 @@ function App() {
 }
 
 function SiteHeader() {
-  const [open, setOpen] = useState(false);
   const [heroHidden, setHeroHidden] = useState(true);
   const location = useLocation();
   useEffect(() => {
@@ -58,12 +54,7 @@ function SiteHeader() {
         <img src={`${import.meta.env.BASE_URL}assets/heytea-logo.png`} alt="" />
         <span><strong>Heytea King</strong><small>杯盏纪年</small></span>
       </Link>
-      <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="打开导航"><Menu /></button>
-      <nav className={open ? "nav-open" : ""} onClick={() => setOpen(false)}>
-        <NavLink to="/">杯盏纪年</NavLink>
-        <NavLink to="/atlas">杯中万象</NavLink>
-        <NavLink to="/orders">一单一程</NavLink>
-      </nav>
+      <span className="header-sequence">杯盏纪年 · 杯中万象</span>
     </header>
   );
 }
@@ -211,10 +202,11 @@ function HomePage() {
         <Reveal className="panel"><CalendarHeatmap /></Reveal>
       </section>
 
-      <section className="atlas-invite">
-        <div><p>THE COMPLETE COLLECTION</p><h2>杯中万象</h2><span>去看已经点亮的杯子，也看看下一杯可能是什么。</span></div>
-        <Link to="/atlas">进入喜茶图鉴 <ChevronRight /></Link>
+      <section className="atlas-transition" aria-label="继续向下进入杯中万象">
+        <div><p>THE COMPLETE COLLECTION</p><h2>杯中万象</h2><span>继续向下</span></div>
+        <i aria-hidden="true" />
       </section>
+      <AtlasSection />
     </main>
   );
 }
@@ -347,7 +339,7 @@ function CalendarHeatmap() {
   return <><div className="panel-heading"><div><h3>按周展开的打卡记录</h3><p>从第一笔账单开始，到数据截止日。</p></div><span>{dates.size} 个消费日</span></div><div className="calendar-scroll"><div className="calendar-grid">{cells.flat().map((cell) => <span key={cell.iso} className={cell.active ? `active level-${Math.min(3, cell.count)}` : ""} title={`${cell.iso}${cell.active ? ` · ${cell.count} 单` : ""}`} />)}</div></div></>;
 }
 
-function AtlasPage() {
+function AtlasSection() {
   const [query, setQuery] = useState("");
   const [series, setSeries] = useState("全部系列");
   const [year, setYear] = useState("全部年份");
@@ -364,7 +356,7 @@ function AtlasPage() {
     return queryMatch && seriesMatch && yearMatch && statusMatch;
   }).sort((a, b) => sort === "cups" ? b.cupCount - a.cupCount : sort === "year" ? b.year - a.year : a.series.localeCompare(b.series, "zh-CN"));
 
-  return <main className="subpage page-width">
+  return <section className="atlas-section page-width" id="atlas">
     <PageMasthead eyebrow="THE COMPLETE COLLECTION" title="杯中万象" subtitle="喜茶历年产品图鉴" note={catalogResearchNote} />
     <div className="atlas-summary"><span><b>{products.filter((p) => p.cupCount > 0).length}</b> 已饮</span><span><b>{products.filter((p) => p.cupCount === 0).length}</b> 未饮</span><span><b>{products.length}</b> 图鉴条目</span></div>
     <div className="filters sticky-filters">
@@ -377,7 +369,7 @@ function AtlasPage() {
     <p className="result-count">显示 {filtered.length} / {products.length} 项</p>
     {sort === "series" ? <div className="catalog-groups">{unique(filtered.map((product) => product.series)).map((group) => <section key={group}><header><h2>{group}</h2><span>{filtered.filter((product) => product.series === group).length} 项</span></header><div className="product-grid">{filtered.filter((product) => product.series === group).map((product, index) => <ProductCard product={product} index={index} key={product.id} onSelect={() => setSelected(product)} />)}</div></section>)}</div> : <div className="product-grid">{filtered.map((product, index) => <ProductCard product={product} index={index} key={product.id} onSelect={() => setSelected(product)} />)}</div>}
     <AnimatePresence>{selected && <ProductDrawer product={selected} onClose={() => setSelected(null)} />}</AnimatePresence>
-  </main>;
+  </section>;
 }
 
 function ProductCard({ product, index, onSelect }: { product: Product; index: number; onSelect: () => void }) {
@@ -415,40 +407,6 @@ function ProductDrawer({ product, onClose }: { product: Product; onClose: () => 
       <div className="purchase-history">{matching.length ? matching.map((order) => <div key={order.id}><time>{order.date}</time><span>{order.store}</span><b>{currency(order.amount)}</b></div>) : <p>这杯尚未出现在订单里。</p>}</div>
     </motion.aside>
   </motion.div>;
-}
-
-function OrdersPage() {
-  const [query, setQuery] = useState("");
-  const [month, setMonth] = useState("全部月份");
-  const [channel, setChannel] = useState("全部渠道");
-  const [status, setStatus] = useState("全部状态");
-  const months = ["全部月份", ...unique(orders.map((order) => order.date.slice(0, 7))).sort().reverse()];
-  const channels = ["全部渠道", ...unique(orders.map((order) => order.channel))];
-  const filtered = orders.filter((order) => {
-    const text = `${order.store} ${order.city} ${order.channel} ${order.items.map((item) => item.rawName).join(" ")}`.toLowerCase();
-    const statusMatch = status === "全部状态" || (status === "有实付" ? order.amount > 0 : order.amount === 0);
-    return text.includes(query.toLowerCase()) && (month === "全部月份" || order.date.startsWith(month)) && (channel === "全部渠道" || order.channel === channel) && statusMatch;
-  });
-  return <main className="subpage page-width">
-    <PageMasthead eyebrow="EVERY ORDER, A PLACE" title="一单一程" subtitle="全部订单明细" note="日期与门店被保留，用户 ID、订单号、取餐码和精确时刻已经移除。" />
-    <div className="order-rollup"><span><b>{filtered.length}</b> 单</span><span><b>{currency(filtered.reduce((sum, order) => sum + order.amount, 0))}</b> 实付</span><span><b>{unique(filtered.map((order) => order.store)).length}</b> 家门店</span></div>
-    <div className="filters">
-      <label className="search-field"><Search /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索门店、商品、城市或渠道" /></label>
-      <select value={month} onChange={(event) => setMonth(event.target.value)}>{months.map((value) => <option key={value}>{value}</option>)}</select>
-      <select value={channel} onChange={(event) => setChannel(event.target.value)}>{channels.map((value) => <option key={value}>{value}</option>)}</select>
-      <select value={status} onChange={(event) => setStatus(event.target.value)} aria-label="筛选订单状态"><option>全部状态</option><option>有实付</option><option>0 元记录</option></select>
-      <button className="export-button" onClick={() => exportCsv(filtered)}><Download /> 导出脱敏 CSV</button>
-    </div>
-    <div className="order-table-wrap"><table><thead><tr><th>日期</th><th>门店</th><th>城市</th><th>渠道</th><th>商品</th><th>实付</th></tr></thead><tbody>{filtered.map((order) => <tr key={order.id}><td><time>{order.date}</time></td><td><strong>{order.store}</strong></td><td>{order.city}</td><td><span className="channel-tag">{order.channel}</span></td><td>{order.items.map((item) => <span className="order-item" key={item.rawName}>{item.rawName}<b>×{item.quantity}</b></span>)}</td><td>{currency(order.amount)}</td></tr>)}</tbody></table></div>
-  </main>;
-}
-
-function exportCsv(rows: Order[]) {
-  const header = ["日期", "门店", "城市", "渠道", "商品", "实付金额"];
-  const csv = [header, ...rows.map((order) => [order.date, order.store, order.city, order.channel, order.items.map((item) => `${item.rawName}×${item.quantity}`).join("；"), order.amount.toFixed(2)])]
-    .map((row) => row.map((cell) => `"${String(cell).replaceAll('"', '""')}"`).join(",")).join("\n");
-  const blob = new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8" });
-  const url = URL.createObjectURL(blob); const anchor = document.createElement("a"); anchor.href = url; anchor.download = "heytea-king-orders.csv"; anchor.click(); URL.revokeObjectURL(url);
 }
 
 function PageMasthead({ eyebrow, title, subtitle, note }: { eyebrow: string; title: string; subtitle: string; note: string }) {

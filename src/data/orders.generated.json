@@ -1,0 +1,2982 @@
+[
+  {
+    "id": "order-06123ba19f",
+    "date": "2026-10-03",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 23.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰山龙眼冰",
+        "productId": "p-e2adcff27e",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-bc9d0d8c30",
+    "date": "2026-10-01",
+    "store": "GATE M 西岸凤巢店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 15.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "满杯红柚（首创）",
+        "productId": "p-88a2b021fd",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-a6d3c4399d",
+    "date": "2026-09-29",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 16.72,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "上海“落地签”沪照",
+        "productId": "p-c762393b93",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "莓莓生乳希腊酸奶*喜拉朵",
+        "productId": "p-f0371c393c",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "九窖茉王白糯米喜拉朵",
+        "productId": "p-b449c55841",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "青柠生乳希腊酸奶*喜拉朵",
+        "productId": "p-280713ddb4",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "喜拉朵三口味",
+        "productId": "p-060982441c",
+        "quantity": 1,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-24e0df4b83",
+    "date": "2026-09-25",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 37.6,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "中秋节限定贺卡",
+        "productId": "p-ae9deb2d4e",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "茉莉绿妍蝴蝶酥(盒装)",
+        "productId": "p-7c0426e9f6",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "中秋限定·一茶一酥",
+        "productId": "p-f2d6a0fe49",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-eb3cf160ba",
+    "date": "2026-09-24",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 33.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "超多肉椰椰芒芒",
+        "productId": "p-3bdf705684",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-e4c25dfb89",
+    "date": "2026-09-21",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 20.15,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "超大杯（650ml）",
+        "productId": "p-c4b16403c1",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "超多肉椰椰芒芒",
+        "productId": "p-3bdf705684",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-d636a70ed7",
+    "date": "2026-09-17",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 0.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "超多肉椰椰芒芒",
+        "productId": "p-3bdf705684",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-1eb4e5b11d",
+    "date": "2026-09-15",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 27.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "超大杯（650ml）",
+        "productId": "p-c4b16403c1",
+        "quantity": 2,
+        "kind": "merch"
+      },
+      {
+        "rawName": "超多肉椰椰芒芒",
+        "productId": "p-3bdf705684",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-4ca7f33a5c",
+    "date": "2026-09-11",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 35.02,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "茉莉绿妍蝴蝶酥(盒装)",
+        "productId": "p-7c0426e9f6",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-896f52c30b",
+    "date": "2026-09-09",
+    "store": "上海百联曲阳购物中心店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 16.54,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "芒芒甘露（首创）",
+        "productId": "p-16ba75fdce",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "金凤茶酥",
+        "productId": "p-11e19688eb",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "茉莉绿妍蝴蝶酥",
+        "productId": "p-b866b2fcec",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "周三·一茶两酥",
+        "productId": "p-38b7d3ea3e",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-6611aa6fa8",
+    "date": "2026-09-06",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "POS",
+    "amount": 0.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "莓莓生乳希腊酸奶*喜拉朵",
+        "productId": "p-f0371c393c",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "葡萄巴斯克喜拉朵",
+        "productId": "p-7ce2e833bf",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "莓果芝士蛋糕喜拉朵",
+        "productId": "p-d3b99fa560",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "喜拉朵三口味",
+        "productId": "p-060982441c",
+        "quantity": 1,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-1605cfa967",
+    "date": "2026-09-03",
+    "store": "喜茶 lab（上海丰盛里店）",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 13.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-e767428abd",
+    "date": "2026-09-03",
+    "store": "喜茶 lab（上海丰盛里店）",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 30.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "斑斓龙眼蛋糕",
+        "productId": "p-9a5ae0527e",
+        "quantity": 1,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-e9d42553e3",
+    "date": "2026-08-30",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "待核验",
+    "amount": 30.21,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "喜拉朵三口味",
+        "productId": "p-060982441c",
+        "quantity": 2,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-9a79973691",
+    "date": "2026-08-30",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "POS",
+    "amount": 0.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "灵感刮刮卡",
+        "productId": "p-e43f48c806",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-60f231de86",
+    "date": "2026-08-30",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 13.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-60f231de86",
+    "date": "2026-08-30",
+    "store": "上海五角场万达 gelato lab+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 13.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-b476ea667f",
+    "date": "2026-08-25",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 20.94,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "爆多加倍葡萄果肉",
+        "productId": "p-2bc072482a",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "芝芝多肉葡萄（首创）",
+        "productId": "p-ff7b5e52c1",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-8cd06844c6",
+    "date": "2026-08-22",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 10.12,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "鸭喜香轻柠茶（超大杯）",
+        "productId": "p-fc306f1bd2",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-419391f109",
+    "date": "2026-08-22",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 11.04,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-654f92286c",
+    "date": "2026-08-20",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 11.96,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-f3fb3d0658",
+    "date": "2026-08-15",
+    "store": "南昌绿地双子塔店",
+    "city": "南昌",
+    "channel": "APP",
+    "amount": 11.96,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-7f28133439",
+    "date": "2026-08-12",
+    "store": "喜茶 lab（上海丰盛里店）",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 77.38,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "岩兰·崇明米酿（本店限定）",
+        "productId": "p-c4f0849959",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "岩兰7",
+        "productId": "p-bae78a5396",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "海盐香草耗牛乳喜拉朵",
+        "productId": "p-6d64cb5537",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "葡萄巴斯克喜拉朵",
+        "productId": "p-7ce2e833bf",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "喝茶吃冰",
+        "productId": "p-6e387cfb3e",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-cdd115f7aa",
+    "date": "2026-08-11",
+    "store": "上海国金中心炒冰实验室+店",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 51.52,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "芒椰糯米饭手炒冰",
+        "productId": "p-c6bd2411ca",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "多肉葡萄手炒冰",
+        "productId": "p-25516f034a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-2cb19623ab",
+    "date": "2026-08-10",
+    "store": "杭州滨江星澜里店",
+    "city": "杭州",
+    "channel": "APP",
+    "amount": 34.88,
+    "orderType": "外卖",
+    "items": [
+      {
+        "rawName": "芒芒甘露（首创）",
+        "productId": "p-16ba75fdce",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "外送费",
+        "productId": null,
+        "quantity": 1,
+        "kind": "fee"
+      }
+    ]
+  },
+  {
+    "id": "order-3ef74a4a8d",
+    "date": "2026-08-09",
+    "store": "杭州滨江银泰店",
+    "city": "杭州",
+    "channel": "APP",
+    "amount": 11.96,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-932b8762ff",
+    "date": "2026-08-08",
+    "store": "长沙高铁吾悦广场店",
+    "city": "长沙",
+    "channel": "APP",
+    "amount": 11.96,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-c2a9ad87fc",
+    "date": "2026-08-07",
+    "store": "长沙芙蓉人民中路店",
+    "city": "长沙",
+    "channel": "APP",
+    "amount": 11.96,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-c2a9ad87fc",
+    "date": "2026-08-07",
+    "store": "长沙芙蓉人民中路店",
+    "city": "长沙",
+    "channel": "APP",
+    "amount": 11.96,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-f84850727b",
+    "date": "2026-08-05",
+    "store": "喜茶 lab（上海丰盛里店）",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 37.54,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "莓莓酸奶喜拉朵",
+        "productId": "p-95b2ebf541",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "芒椰糯米饭喜拉朵",
+        "productId": "p-07deb5179f",
+        "quantity": 2,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "芝芝葡萄喜拉朵",
+        "productId": "p-1291d29fbd",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "葡萄巴斯克喜拉朵",
+        "productId": "p-7ce2e833bf",
+        "quantity": 2,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "喜拉朵三口味",
+        "productId": "p-060982441c",
+        "quantity": 2,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-333df07029",
+    "date": "2026-08-05",
+    "store": "喜茶 lab（上海丰盛里店）",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 19.55,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "岩兰2",
+        "productId": "p-153e7cfc1b",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-299b22332a",
+    "date": "2026-08-05",
+    "store": "喜茶 lab（上海丰盛里店）",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 67.16,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉芒芒甘露蛋糕",
+        "productId": "p-9532915611",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "迷你糯糯芋泥蛋糕",
+        "productId": "p-177f2a5e40",
+        "quantity": 1,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-7e5b57bc8e",
+    "date": "2026-08-04",
+    "store": "深圳机场国内出发厅店",
+    "city": "深圳",
+    "channel": "微信小程序",
+    "amount": 16.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-df171bf108",
+    "date": "2026-08-04",
+    "store": "深圳机场国内出发厅店",
+    "city": "深圳",
+    "channel": "微信小程序",
+    "amount": 12.44,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-177d0691be",
+    "date": "2026-08-02",
+    "store": "喜茶工艺(广州石牌桥店)",
+    "city": "广州",
+    "channel": "POS",
+    "amount": 105.8,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "怪香的",
+        "productId": "p-f22ceea3be",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "酸嘢",
+        "productId": "p-9fe6b0ec80",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "岩瑞香·玫瑰荔枝gelato",
+        "productId": "p-cc4492f292",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "岩瑞香·柚子青柠gelato",
+        "productId": "p-82f1745774",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "手冲·虫咬乌龙",
+        "productId": "p-c53f09bb79",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-c66bae8af9",
+    "date": "2026-08-01",
+    "store": "广州沙面DP店",
+    "city": "广州",
+    "channel": "POS",
+    "amount": 34.96,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "苦抹水牛乳冰淇淋",
+        "productId": "p-3eeba37c73",
+        "quantity": 2,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-6ed5147f8e",
+    "date": "2026-08-01",
+    "store": "广州东方宝泰店",
+    "city": "广州",
+    "channel": "APP",
+    "amount": 52.32,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "奇香黄皮桃",
+        "productId": "p-d31d8cf3ee",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "拿铁",
+        "productId": "p-343da43da2",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-ef110c1eaa",
+    "date": "2026-07-31",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 23.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "苦巧·咸酪碎银子",
+        "productId": "p-56f573a271",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-413d68badf",
+    "date": "2026-07-30",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 11.96,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-e6609f190f",
+    "date": "2026-07-30",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "微信小程序",
+    "amount": 20.24,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "奇香黄皮桃",
+        "productId": "p-d31d8cf3ee",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "多肉黄皮葡",
+        "productId": "p-d3e94fb6e3",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-35ff24be2b",
+    "date": "2026-07-29",
+    "store": "深圳万象天地cakelab+店",
+    "city": "深圳",
+    "channel": "APP",
+    "amount": 42.3,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "需要餐具(应环保要求收费)",
+        "productId": "p-d5af22ca0e",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "爆芋泥木薯蛋糕（本店限定）",
+        "productId": "p-2f88f3df22",
+        "quantity": 1,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-02e594dd27",
+    "date": "2026-07-29",
+    "store": "深圳万象天地cakelab+店",
+    "city": "深圳",
+    "channel": "APP",
+    "amount": 28.1,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "需要餐具（应环保要求收费）",
+        "productId": "p-02ad5e618f",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "爆芋泥蛋糕",
+        "productId": "p-5a2ac17fe0",
+        "quantity": 1,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-20eb48aee2",
+    "date": "2026-07-27",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 38.27,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "茉莉绿妍蝴蝶酥(盒装)",
+        "productId": "p-7c0426e9f6",
+        "quantity": 2,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-19718d6874",
+    "date": "2026-07-25",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 11.96,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-530d9252c5",
+    "date": "2026-07-24",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "微信小程序",
+    "amount": 23.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "金韵苹果人参果",
+        "productId": "p-b121f6317d",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-1b7f6a8fbc",
+    "date": "2026-07-22",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 23.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "金韵苹果人参果",
+        "productId": "p-b121f6317d",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-440a59415d",
+    "date": "2026-07-18",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 218.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "苦巧·咸酪碎银子",
+        "productId": "p-56f573a271",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "多肉桃李（首创）",
+        "productId": "p-12f93d1869",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "西多士波波港奶",
+        "productId": "p-64c232c48c",
+        "quantity": 8,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-853d2fe7df",
+    "date": "2026-07-18",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 18.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-8a3d1765bc",
+    "date": "2026-07-18",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 0.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-b5f69980dd",
+    "date": "2026-07-16",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 0.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "奇兰芭乐莲雾（首创）",
+        "productId": "p-1843ac1953",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-ee5ff11e2f",
+    "date": "2026-07-16",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "微信小程序",
+    "amount": 3.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "爆多加倍葡萄果肉",
+        "productId": "p-2bc072482a",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "芝芝多肉葡萄（首创）",
+        "productId": "p-ff7b5e52c1",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-759cbbaef3",
+    "date": "2026-07-14",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 189.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "超大杯(冷650m1)",
+        "productId": "p-1db138995a",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "咸酪碎银子",
+        "productId": "p-cd41cd0b06",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "芝芝多肉葡萄（首创）",
+        "productId": "p-ff7b5e52c1",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "多肉桃李（首创)",
+        "productId": "p-727612d992",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "柠打·九窖茉王",
+        "productId": "p-5775cf6371",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "弹弹冻",
+        "productId": "p-e3d81b38dd",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-92ce9ce8ef",
+    "date": "2026-07-13",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 206.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "苦巧·咸酪碎银子",
+        "productId": "p-56f573a271",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "清爽芭乐提（白芭乐）",
+        "productId": "p-57d17e264b",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "柠打·九窖茉王",
+        "productId": "p-5775cf6371",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "青芒酸",
+        "productId": "p-198b183440",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "三倍厚抹",
+        "productId": "p-7078aeca78",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "慢熬黑糖波波",
+        "productId": "p-68d532dcc7",
+        "quantity": 2,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-c054c55d72",
+    "date": "2026-07-13",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 22.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "青芒酸",
+        "productId": "p-198b183440",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-8dd457ce0a",
+    "date": "2026-07-10",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 104.15,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "苦巧·咸酪碎银子",
+        "productId": "p-56f573a271",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "奇兰苹果杏（首创）",
+        "productId": "p-e7ecdda6ba",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "微黄皮桃",
+        "productId": "p-3f399aba34",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "三倍厚抹",
+        "productId": "p-7078aeca78",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-91bc110f9c",
+    "date": "2026-07-09",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 151.65,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "超多肉版",
+        "productId": "p-d4ba034307",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "苦巧·咸酪(不含茶)",
+        "productId": "p-795036248d",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "芒芒甘露（首创）",
+        "productId": "p-16ba75fdce",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "轻芝多肉葡萄（首创）",
+        "productId": "p-2de2234950",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "清爽芭乐提（红芭乐）",
+        "productId": "p-05532a8885",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "奇兰苹果杏（首创）",
+        "productId": "p-e7ecdda6ba",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "柠打·九窖茉王",
+        "productId": "p-5775cf6371",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-c6c852161e",
+    "date": "2026-07-09",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 20.5,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "柠打·九窖茉王",
+        "productId": "p-5775cf6371",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "外送费",
+        "productId": null,
+        "quantity": 1,
+        "kind": "fee"
+      }
+    ]
+  },
+  {
+    "id": "order-54993e155a",
+    "date": "2026-07-06",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "微信小程序",
+    "amount": 22.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "微醺黄皮桃",
+        "productId": "p-d0c7a05baf",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-3a639f4a9f",
+    "date": "2026-07-05",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 38.33,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "茉莉绿妍蝴蝶酥(盒装)",
+        "productId": "p-7c0426e9f6",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "鲜果茶",
+        "productId": "p-4870625128",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-fb0818776f",
+    "date": "2026-07-04",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 80.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "真0卡糖",
+        "productId": "p-9d63ead901",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "烤黑糖波波牛乳（首创）",
+        "productId": "p-35bb1ad914",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "三倍厚抹",
+        "productId": "p-7078aeca78",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "碎银子牛乳茶",
+        "productId": "p-ac865b9a34",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-731132b051",
+    "date": "2026-07-03",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 75.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "苦巧·咸酪碎银子",
+        "productId": "p-56f573a271",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "清爽芭乐提（红芭乐）",
+        "productId": "p-05532a8885",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "奇兰芭乐莲雾（首创）",
+        "productId": "p-1843ac1953",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-249b9c09fc",
+    "date": "2026-07-01",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 38.05,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "鸭喜香轻柠茶（超大杯）",
+        "productId": "p-fc306f1bd2",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "轻芝多肉葡萄（首创）",
+        "productId": "p-2de2234950",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-ae0e94dec0",
+    "date": "2026-06-30",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 27.6,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "多肉桃李（首创）",
+        "productId": "p-12f93d1869",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-c11487b0f1",
+    "date": "2026-06-30",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 104.88,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "真0卡糖",
+        "productId": "p-9d63ead901",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "多肉芒芒",
+        "productId": "p-fe008b4206",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "芒芒甘露（首创）",
+        "productId": "p-16ba75fdce",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "轻芝多肉葡萄（首创）",
+        "productId": "p-2de2234950",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "三倍厚抹",
+        "productId": "p-7078aeca78",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "0脂脆波波",
+        "productId": "p-d52c05c451",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "白柚果粒",
+        "productId": "p-f65ee9b768",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-fa6574d99e",
+    "date": "2026-06-27",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 19.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "轻芝多肉葡萄（首创）",
+        "productId": "p-2de2234950",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-fa6574d99e",
+    "date": "2026-06-27",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 19.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "轻芝多肉葡萄（首创）",
+        "productId": "p-2de2234950",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-0ab751bcab",
+    "date": "2026-06-26",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 13.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-4732b1095e",
+    "date": "2026-06-25",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 120.0,
+    "orderType": "外卖",
+    "items": [
+      {
+        "rawName": "咸酪碎银子",
+        "productId": "p-cd41cd0b06",
+        "quantity": 3,
+        "kind": "drink"
+      },
+      {
+        "rawName": "轻芝多肉葡萄（首创）",
+        "productId": "p-2de2234950",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "外送费",
+        "productId": null,
+        "quantity": 1,
+        "kind": "fee"
+      }
+    ]
+  },
+  {
+    "id": "order-4ac4a5ed3b",
+    "date": "2026-06-24",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 135.5,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "咸酪碎银子",
+        "productId": "p-cd41cd0b06",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "芝芝多肉葡萄（首创）",
+        "productId": "p-ff7b5e52c1",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "芒芒甘露（首创）",
+        "productId": "p-16ba75fdce",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "鸭喜香轻柠茶（超大杯）",
+        "productId": "p-fc306f1bd2",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "外送费",
+        "productId": null,
+        "quantity": 1,
+        "kind": "fee"
+      }
+    ]
+  },
+  {
+    "id": "order-0a0096f40f",
+    "date": "2026-06-23",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "微信小程序",
+    "amount": 99.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "苦巧·咸酪碎银子",
+        "productId": "p-56f573a271",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "多肉桃李（首创）",
+        "productId": "p-12f93d1869",
+        "quantity": 3,
+        "kind": "drink"
+      },
+      {
+        "rawName": "轻芝多肉葡萄（首创）",
+        "productId": "p-2de2234950",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "红柚果粒",
+        "productId": "p-31faac5611",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "西米",
+        "productId": "p-a84b9293d2",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "弹弹冻",
+        "productId": "p-e3d81b38dd",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-abd41cf88f",
+    "date": "2026-06-22",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 23.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "茉荔鲜",
+        "productId": "p-a189ebf003",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-e5bd892932",
+    "date": "2026-06-21",
+    "store": "喜茶 lab（上海丰盛里店）",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 26.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "岩兰·崇明米酿（本店限定）",
+        "productId": "p-c4f0849959",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-9cf4229a26",
+    "date": "2026-06-21",
+    "store": "喜茶 lab（上海丰盛里店）",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 78.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "heytealab限定手提袋",
+        "productId": "p-791c6945f6",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-1717021552",
+    "date": "2026-06-20",
+    "store": "喜茶 lab（上海丰盛里店）",
+    "city": "上海",
+    "channel": "APP",
+    "amount": 173.72,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "咸蛋黄流心蛋挞",
+        "productId": "p-0cd6b85d21",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "香草籽生布蕾芋泥挞",
+        "productId": "p-a8113084f9",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "芝芝葡萄喜拉朵",
+        "productId": "p-1291d29fbd",
+        "quantity": 2,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "流心蛋（本店限定）",
+        "productId": "p-319f9a5521",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "芒椰糯米饭蛋糕",
+        "productId": "p-d580d5e621",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "盛夏吃冰有礼",
+        "productId": "p-047a5eff33",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "喜拉朵冰箱贴盲袋",
+        "productId": "p-3461585444",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-2c42b53fd4",
+    "date": "2026-06-19",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 41.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "清爽芭乐提（红芭乐）",
+        "productId": "p-05532a8885",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "端午游龙·双杯套餐",
+        "productId": "p-655bc0bd26",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "端午游龙·冰箱贴",
+        "productId": "p-39a4c0836b",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-dea2ec25f7",
+    "date": "2026-06-18",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 226.06,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "真0卡糖",
+        "productId": "p-9d63ead901",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "低GI「L-阿拉伯糖」",
+        "productId": "p-8fa18f8abf",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "加倍芒果果肉",
+        "productId": "p-beadd9acb7",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "咸酪厚抹",
+        "productId": "p-b62d4390dd",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "芒椰糯米饭",
+        "productId": "p-25782f0c72",
+        "quantity": 4,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "爆汁杨梅",
+        "productId": "p-106f5cd4ab",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "奇兰芭乐莲雾（首创）",
+        "productId": "p-1843ac1953",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 3,
+        "kind": "drink"
+      },
+      {
+        "rawName": "三倍厚抹",
+        "productId": "p-7078aeca78",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "西米",
+        "productId": "p-a84b9293d2",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-7ce1bdebf8",
+    "date": "2026-06-18",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 43.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "芒椰糯米饭",
+        "productId": "p-25782f0c72",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "端午游龙·单杯套餐",
+        "productId": "p-7f57081561",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "端午游龙·帆布袋",
+        "productId": "p-3041b4626e",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-c990e864f5",
+    "date": "2026-06-16",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 99.5,
+    "orderType": "外卖",
+    "items": [
+      {
+        "rawName": "加倍芒果果肉",
+        "productId": "p-beadd9acb7",
+        "quantity": 2,
+        "kind": "merch"
+      },
+      {
+        "rawName": "芒椰糯米饭",
+        "productId": "p-25782f0c72",
+        "quantity": 5,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "椰香糯米饭",
+        "productId": "p-cbb51810f5",
+        "quantity": 1,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "外送费",
+        "productId": null,
+        "quantity": 1,
+        "kind": "fee"
+      }
+    ]
+  },
+  {
+    "id": "order-b0eb9124f4",
+    "date": "2026-06-15",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 87.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "低GI「L-阿拉伯糖」",
+        "productId": "p-8fa18f8abf",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "加倍芒果果肉",
+        "productId": "p-beadd9acb7",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "芒椰糯米饭",
+        "productId": "p-25782f0c72",
+        "quantity": 4,
+        "kind": "dessert"
+      },
+      {
+        "rawName": "三倍厚抹",
+        "productId": "p-7078aeca78",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "红柚果粒",
+        "productId": "p-31faac5611",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "弹弹冻",
+        "productId": "p-e3d81b38dd",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-50919687d8",
+    "date": "2026-06-13",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "APP",
+    "amount": 110.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "真0卡糖",
+        "productId": "p-9d63ead901",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "苦巧·咸酪碎银子",
+        "productId": "p-56f573a271",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "芒芒甘露（首创）",
+        "productId": "p-16ba75fdce",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "轻芝多肉葡萄（首创）",
+        "productId": "p-2de2234950",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "轻芝杨梅",
+        "productId": "p-5f05b476ae",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "三倍厚抹",
+        "productId": "p-7078aeca78",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-c052c29e89",
+    "date": "2026-06-12",
+    "store": "佛山佛罗伦萨小镇店",
+    "city": "佛山",
+    "channel": "微信小程序",
+    "amount": 75.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "真0卡糖",
+        "productId": "p-9d63ead901",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "多肉桃李（首创）",
+        "productId": "p-12f93d1869",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "三倍厚抹",
+        "productId": "p-7078aeca78",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-6ac09773e2",
+    "date": "2026-06-11",
+    "store": "广州沙面DP店",
+    "city": "广州",
+    "channel": "微信小程序",
+    "amount": 21.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "老广鲜腐竹豆浆",
+        "productId": "p-23ebfca539",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-49d11142a2",
+    "date": "2026-06-11",
+    "store": "喜茶 lab（广州天环广场店）",
+    "city": "广州",
+    "channel": "微信小程序",
+    "amount": 30.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄爆浆蛋糕",
+        "productId": "p-5c54034ec2",
+        "quantity": 1,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-e521be33c8",
+    "date": "2026-06-11",
+    "store": "喜茶 lab（广州天环广场店）",
+    "city": "广州",
+    "channel": "微信小程序",
+    "amount": 20.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉青提蛋糕",
+        "productId": "p-e8baa14682",
+        "quantity": 1,
+        "kind": "dessert"
+      }
+    ]
+  },
+  {
+    "id": "order-782f43a594",
+    "date": "2026-06-09",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "POS",
+    "amount": 51.92,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "爆多加倍葡萄果肉",
+        "productId": "p-2bc072482a",
+        "quantity": 2,
+        "kind": "merch"
+      },
+      {
+        "rawName": "芝芝多肉葡萄（首创）",
+        "productId": "p-ff7b5e52c1",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-d5cd461283",
+    "date": "2026-06-08",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 0.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "热烤黑糖波波牛乳茶",
+        "productId": "p-6400cd000c",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-9660172224",
+    "date": "2026-06-05",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 18.39,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-e83e69ea81",
+    "date": "2026-06-05",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 22.8,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-1b29b8995e",
+    "date": "2026-06-03",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 20.9,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "轻酵黄皮康普茶",
+        "productId": "p-faed4405c8",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-8c85093f82",
+    "date": "2026-06-02",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 31.35,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "爆多加倍葡萄果肉",
+        "productId": "p-2bc072482a",
+        "quantity": 2,
+        "kind": "merch"
+      },
+      {
+        "rawName": "芝芝多肉葡萄（首创）",
+        "productId": "p-ff7b5e52c1",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-b414cb5dc7",
+    "date": "2026-06-01",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 38.19,
+    "orderType": "外卖",
+    "items": [
+      {
+        "rawName": "奇兰芭乐莲雾（首创）",
+        "productId": "p-1843ac1953",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "六一·节日限定套餐",
+        "productId": "p-5e16db76c6",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "外送费",
+        "productId": null,
+        "quantity": 1,
+        "kind": "fee"
+      }
+    ]
+  },
+  {
+    "id": "order-0cd970fd8e",
+    "date": "2026-05-31",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 34.06,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "六一·节日限定套餐",
+        "productId": "p-5e16db76c6",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-0c099a9218",
+    "date": "2026-05-30",
+    "store": "吉安城南天虹店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 16.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "奇兰苹果杏（首创）",
+        "productId": "p-e7ecdda6ba",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-525c770f6d",
+    "date": "2026-05-30",
+    "store": "吉安城南天虹店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 9.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "奇兰苹果杏（首创）",
+        "productId": "p-e7ecdda6ba",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-e839e6b91b",
+    "date": "2026-05-29",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 20.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "红柚果粒",
+        "productId": "p-31faac5611",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "首创芝芝云顶",
+        "productId": "p-ad6c7d9ff0",
+        "quantity": 1,
+        "kind": "merch"
+      },
+      {
+        "rawName": "西米",
+        "productId": "p-a84b9293d2",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-5db87c721c",
+    "date": "2026-05-27",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 40.7,
+    "orderType": "外卖",
+    "items": [
+      {
+        "rawName": "杨桃三重甘",
+        "productId": "p-51b4ba8ae2",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "双杯·人气必喝",
+        "productId": "p-669d4024a6",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "外送费",
+        "productId": null,
+        "quantity": 1,
+        "kind": "fee"
+      }
+    ]
+  },
+  {
+    "id": "order-1ab697fdbe",
+    "date": "2026-05-26",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 30.5,
+    "orderType": "外卖",
+    "items": [
+      {
+        "rawName": "芝芝多肉杨梅",
+        "productId": "p-5b9033eed9",
+        "quantity": 1,
+        "kind": "drink"
+      },
+      {
+        "rawName": "外送费",
+        "productId": null,
+        "quantity": 1,
+        "kind": "fee"
+      }
+    ]
+  },
+  {
+    "id": "order-1329c7438f",
+    "date": "2026-05-25",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 49.0,
+    "orderType": "外卖",
+    "items": [
+      {
+        "rawName": "芝芝多肉葡萄（首创）",
+        "productId": "p-ff7b5e52c1",
+        "quantity": 2,
+        "kind": "drink"
+      },
+      {
+        "rawName": "外送费",
+        "productId": null,
+        "quantity": 1,
+        "kind": "fee"
+      }
+    ]
+  },
+  {
+    "id": "order-31335c8e7b",
+    "date": "2026-05-23",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "APP",
+    "amount": 11.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-c03a309e04",
+    "date": "2026-05-22",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 16.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-ec9a8d10fa",
+    "date": "2026-04-30",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 15.84,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-666a38b178",
+    "date": "2026-04-30",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 10.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-60c2610838",
+    "date": "2026-02-24",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 16.5,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-60c2610838",
+    "date": "2026-02-24",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 16.5,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-d7511decef",
+    "date": "2026-02-20",
+    "store": "上海港汇恒隆店",
+    "city": "上海",
+    "channel": "微信小程序",
+    "amount": 16.5,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-d7511decef",
+    "date": "2026-02-20",
+    "store": "上海港汇恒隆店",
+    "city": "上海",
+    "channel": "微信小程序",
+    "amount": 16.5,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-471e38dd18",
+    "date": "2026-02-18",
+    "store": "吉安莱斯百货店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 16.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-72d8ccdb1e",
+    "date": "2026-01-01",
+    "store": "南昌万象汇店（关闭）",
+    "city": "南昌",
+    "channel": "微信小程序",
+    "amount": 16.5,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-9901a6b571",
+    "date": "2025-12-31",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 15.84,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-80a5397a22",
+    "date": "2025-12-31",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 10.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-bcfabdad89",
+    "date": "2025-12-28",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 42.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "芝芝多肉葡萄（首创）",
+        "productId": "p-ff7b5e52c1",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-16f5cf24e6",
+    "date": "2025-12-21",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 17.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "清爽芭乐提（红芭乐）",
+        "productId": "p-05532a8885",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-8e3e9b139c",
+    "date": "2025-12-21",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 16.72,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "清爽芭乐提（红芭乐）",
+        "productId": "p-05532a8885",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-3ca11cf611",
+    "date": "2025-11-29",
+    "store": "吉安城南天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 13.2,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "小奶茉（超大杯）",
+        "productId": "p-ebc706c755",
+        "quantity": 1,
+        "kind": "merch"
+      }
+    ]
+  },
+  {
+    "id": "order-de202c8a75",
+    "date": "2025-11-29",
+    "store": "吉安城南天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 16.5,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "烤黑糖波波牛乳茶",
+        "productId": "p-5ab094fe31",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-834338f6ed",
+    "date": "2025-11-08",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 13.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-867c3cd5dc",
+    "date": "2025-11-08",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 15.84,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-36124a209c",
+    "date": "2025-10-18",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 7.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-c0c484ef0f",
+    "date": "2025-10-18",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 16.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-b98e20caf7",
+    "date": "2025-09-30",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 16.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "多肉葡萄（首创）",
+        "productId": "p-fb46de7596",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-3ad62f6eed",
+    "date": "2025-09-30",
+    "store": "吉安人民广场天虹店",
+    "city": "吉安",
+    "channel": "微信小程序",
+    "amount": 13.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "椰椰芒芒",
+        "productId": "p-9cb4037f5a",
+        "quantity": 1,
+        "kind": "drink"
+      }
+    ]
+  },
+  {
+    "id": "order-38b2f85c1c",
+    "date": "2025-08-10",
+    "store": "南昌中山路天虹店",
+    "city": "南昌",
+    "channel": "微信小程序",
+    "amount": 40.0,
+    "orderType": "堂食",
+    "items": [
+      {
+        "rawName": "超多肉芒芒甘露",
+        "productId": "p-3383d049c4",
+        "quantity": 2,
+        "kind": "drink"
+      }
+    ]
+  }
+]

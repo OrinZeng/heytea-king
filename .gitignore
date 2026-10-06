@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.pnpm-store/
+.DS_Store
+.vite/
+data/private/
+tmp/
+*.log
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+:memory:.ses

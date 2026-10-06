@@ -1,0 +1,57 @@
+.site-header {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.site-header.header-hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.drawer-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 18px;
+}
+
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #9b6f48;
+  font-size: 0.78rem;
+}
+
+.source-link svg {
+  width: 15px;
+}
+
+.catalog-groups > section {
+  margin: 0 0 76px;
+}
+
+.catalog-groups > section > header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 12px 4px 22px;
+  border-bottom: 1px solid #e9e8e5;
+  margin-bottom: 18px;
+}
+
+.catalog-groups > section > header h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  letter-spacing: -0.05em;
+  font-weight: 560;
+}
+
+.catalog-groups > section > header span {
+  color: #9a9791;
+  font-size: 0.75rem;
+}
+
+.catalog-groups .product-grid {
+  padding-bottom: 0;
+}

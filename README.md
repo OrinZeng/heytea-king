@@ -20,6 +20,8 @@
 
 菜单索引来自[咖啡奶茶喝什么的喜茶菜单](https://www.nckfhsm.com/brands/xi-cha/menu/available)，其单品图片链接指向 `go.cdn.heytea.com`。已下载图片的原始 URL 保存在 `src/data/catalog.generated.json` 与 `src/data/product-sources.json`。所有品牌与产品素材权利归原权利人所有，本项目为个人非商业数据档案。
 
+门店足迹使用 [DataV.GeoAtlas](https://datav.aliyun.com/portal/school/atlas/area_selector) 的中国省级 GeoJSON 边界数据，叠加本项目中已核验的门店经纬度；地图仅在浏览器本地渲染。
+
 ## 本地运行
 
 ```bash

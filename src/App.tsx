@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import * as echarts from "echarts";
 import ReactECharts from "echarts-for-react";
 import {
   CalendarDays,
@@ -82,12 +83,12 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
   );
 }
 
-function ChapterTitle({ eyebrow, title, note }: { eyebrow: string; title: string; note: string }) {
+function ChapterTitle({ eyebrow, title, note }: { eyebrow: string; title: string; note?: string }) {
   return (
-    <div className="chapter-title">
+    <div className={`chapter-title ${note ? "" : "chapter-title-compact"}`}>
       <span>{eyebrow}</span>
       <h2>{title}</h2>
-      <p>{note}</p>
+      {note && <p>{note}</p>}
     </div>
   );
 }
@@ -149,14 +150,14 @@ function HomePage() {
       </section>
 
       <section className="chapter page-width" id="between">
-        <Reveal><ChapterTitle eyebrow="CHAPTER 01" title="一杯之间" note="数字不是结论，只是这些杯盏留下的轮廓。" /></Reveal>
+        <Reveal><ChapterTitle eyebrow="CHAPTER 01" title="一杯之间" /></Reveal>
         <div className="metrics-grid">
-          <Metric dark label="累计实付" value={currency(totalAmount)} note="退款与撤销不计入" icon={<CircleDollarSign />} />
-          <Metric label="有效订单" value={`${orders.length} 单`} note="按脱敏订单统计" icon={<CalendarDays />} />
-          <Metric label="共饮" value={`${cupCount} 杯`} note="同款多杯按杯数累计" icon={<CupSoda />} />
+          <Metric dark label="累计实付" value={currency(totalAmount)} icon={<CircleDollarSign />} />
+          <Metric label="有效订单" value={`${orders.length} 单`} icon={<CalendarDays />} />
+          <Metric label="共饮" value={`${cupCount} 杯`} icon={<CupSoda />} />
           <Metric label="到访门店" value={`${storeNames.length} 家`} note={`足迹遍及 ${cities.length} 座城市`} icon={<Store />} />
           <Metric label="图鉴点亮" value={`${tried} / ${products.length}`} note={`${Math.round((tried / products.length) * 100)}% 已饮`} icon={<Sparkles />} />
-          <Metric label="平均客单" value={currency(totalAmount / orders.length)} note="包含甜品与周边" icon={<SlidersHorizontal />} />
+          <Metric label="平均客单" value={currency(totalAmount / orders.length)} icon={<SlidersHorizontal />} />
         </div>
         <Reveal className="insight-grid">
           <Insight title="常念的一杯" value={[...products].sort((a, b) => b.cupCount - a.cupCount)[0]?.name ?? "尚未统计"} note={`${[...products].sort((a, b) => b.cupCount - a.cupCount)[0]?.cupCount ?? 0} 杯`} />
@@ -166,7 +167,7 @@ function HomePage() {
       </section>
 
       <section className="chapter page-width">
-        <Reveal><ChapterTitle eyebrow="CHAPTER 02" title="时光入盏" note="看见消费的起伏，也看见生活节奏改变的时刻。" /></Reveal>
+        <Reveal><ChapterTitle eyebrow="CHAPTER 02" title="时光入盏" /></Reveal>
         <Reveal className="panel chart-panel">
           <div className="panel-heading"><div><h3>月度消费趋势</h3><p>柱形为实付金额，金色折线映照订单频次。</p></div><span>{monthly.length} 个月</span></div>
           <ReactECharts option={monthlyOption} style={{ height: 390 }} />
@@ -175,7 +176,7 @@ function HomePage() {
       </section>
 
       <section className="chapter page-width">
-        <Reveal><ChapterTitle eyebrow="CHAPTER 03" title="饮茶时刻" note="什么时候最想喝一杯，习惯比记忆更诚实。" /></Reveal>
+        <Reveal><ChapterTitle eyebrow="CHAPTER 03" title="饮茶时刻" /></Reveal>
         <Reveal className="panel"><Heatmap /></Reveal>
         <div className="split-grid">
           <Reveal className="panel"><ChannelChart /></Reveal>
@@ -184,7 +185,7 @@ function HomePage() {
       </section>
 
       <section className="chapter page-width">
-        <Reveal><ChapterTitle eyebrow="CHAPTER 04" title="杯行何处" note="从城市到门店，每一次抵达都在地图上留下一点。" /></Reveal>
+        <Reveal><ChapterTitle eyebrow="CHAPTER 04" title="杯行何处" /></Reveal>
         <Reveal className="panel map-panel"><StoreMap /></Reveal>
         <div className="split-grid">
           <Reveal className="panel"><CityRanks /></Reveal>
@@ -193,11 +194,11 @@ function HomePage() {
       </section>
 
       <section className="chapter page-width">
-        <Reveal><ChapterTitle eyebrow="CHAPTER 05" title="数字有意" note="取餐号只留下聚合后的巧合，不再指向任何一笔订单。" /></Reveal>
+        <Reveal><ChapterTitle eyebrow="CHAPTER 05" title="数字有意" /></Reveal>
         <div className="number-story-grid">
-          <Reveal className="panel number-card"><span>最常出现</span><strong>{aggregateData.pickup.digits.indexOf(Math.max(...aggregateData.pickup.digits))}</strong><p>在脱敏后的数字样本中最频繁</p></Reveal>
-          <Reveal className="panel number-card"><span>回文号码</span><strong>{aggregateData.pickup.palindromes}</strong><p>只发布数量，不保留原始号码</p></Reveal>
-          <Reveal className="panel number-card"><span>重复数字</span><strong>{aggregateData.pickup.repeated}</strong><p>同一数字出现三次及以上</p></Reveal>
+          <Reveal className="panel number-card"><span>最常出现</span><strong>{aggregateData.pickup.digits.indexOf(Math.max(...aggregateData.pickup.digits))}</strong></Reveal>
+          <Reveal className="panel number-card"><span>回文号码</span><strong>{aggregateData.pickup.palindromes}</strong></Reveal>
+          <Reveal className="panel number-card"><span>重复数字</span><strong>{aggregateData.pickup.repeated}</strong></Reveal>
         </div>
         <Reveal className="panel digit-bars">
           <h3>号码里的十个数</h3>
@@ -206,7 +207,7 @@ function HomePage() {
       </section>
 
       <section className="chapter page-width">
-        <Reveal><ChapterTitle eyebrow="CHAPTER 06" title="杯盏日历" note="一格是一日，颜色越深，那天留下的杯数越多。" /></Reveal>
+        <Reveal><ChapterTitle eyebrow="CHAPTER 06" title="杯盏日历" /></Reveal>
         <Reveal className="panel"><CalendarHeatmap /></Reveal>
       </section>
 
@@ -218,8 +219,8 @@ function HomePage() {
   );
 }
 
-function Metric({ label, value, note, icon, dark = false }: { label: string; value: string; note: string; icon: React.ReactNode; dark?: boolean }) {
-  return <Reveal className={`metric ${dark ? "metric-dark" : ""}`}><span className="metric-icon">{icon}</span><p>{label}</p><strong>{value}</strong><small>{note}</small></Reveal>;
+function Metric({ label, value, note, icon, dark = false }: { label: string; value: string; note?: string; icon: React.ReactNode; dark?: boolean }) {
+  return <Reveal className={`metric ${dark ? "metric-dark" : ""}`}><span className="metric-icon">{icon}</span><p>{label}</p><strong>{value}</strong>{note && <small>{note}</small>}</Reveal>;
 }
 
 function Insight({ title, value, note }: { title: string; value: string; note: string }) {
@@ -270,11 +271,53 @@ function PriceBands() {
 }
 
 function StoreMap() {
-  const minLon = Math.min(...stores.map((s) => s.longitude));
-  const maxLon = Math.max(...stores.map((s) => s.longitude));
-  const minLat = Math.min(...stores.map((s) => s.latitude));
-  const maxLat = Math.max(...stores.map((s) => s.latitude));
-  return <><div className="panel-heading"><div><h3>门店足迹</h3><p>经核验的城市与门店点位；圆点越大，到访次数越多。</p></div><span>{stores.length} 家</span></div><div className="abstract-map">{stores.map((store) => <button key={store.name} className="map-point" style={{ left: `${8 + ((store.longitude - minLon) / (maxLon - minLon || 1)) * 84}%`, bottom: `${10 + ((store.latitude - minLat) / (maxLat - minLat || 1)) * 74}%`, width: `${12 + store.visits * 2}px`, height: `${12 + store.visits * 2}px` }} title={`${store.name} · ${store.visits} 次`}><span>{store.city}</span></button>)}</div></>;
+  const [mapReady, setMapReady] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    fetch(`${import.meta.env.BASE_URL}assets/china-provinces.geojson`)
+      .then((response) => response.json())
+      .then((geoJson) => {
+        echarts.registerMap("heytea-china", geoJson);
+        if (active) setMapReady(true);
+      });
+    return () => { active = false; };
+  }, []);
+
+  const mapOption = {
+    animationDuration: 900,
+    tooltip: {
+      trigger: "item",
+      backgroundColor: "rgba(20,20,20,.94)",
+      borderWidth: 0,
+      textStyle: { color: "#fff", fontSize: 12 },
+      formatter: (params: { data?: { name: string; city: string; value: number[] } }) => params.data
+        ? `${params.data.name}<br/>${params.data.city} · ${params.data.value[2]} 次`
+        : "",
+    },
+    geo: {
+      map: "heytea-china",
+      roam: true,
+      zoom: 1.18,
+      center: [107.5, 32.5],
+      itemStyle: { areaColor: "#f3f2ef", borderColor: "#d2d0ca", borderWidth: 0.8 },
+      emphasis: { itemStyle: { areaColor: "#e8e4dc" }, label: { show: false } },
+      select: { disabled: true },
+      label: { show: false },
+    },
+    series: [{
+      type: "effectScatter",
+      coordinateSystem: "geo",
+      showEffectOn: "emphasis",
+      rippleEffect: { scale: 2.7, brushType: "stroke" },
+      symbolSize: (value: number[]) => Math.min(34, 9 + value[2] * 0.65),
+      itemStyle: { color: gold, shadowColor: "rgba(20,20,20,.24)", shadowBlur: 8 },
+      emphasis: { scale: 1.35, label: { show: true, formatter: "{b}", position: "right", color: ink, fontWeight: 600 } },
+      data: stores.map((store) => ({ name: store.name, city: store.city, value: [store.longitude, store.latitude, store.visits] })),
+    }],
+  };
+
+  return <><div className="panel-heading"><div><h3>门店足迹</h3><p>拖动与缩放地图，悬停查看具体门店。</p></div><span>{stores.length} 家</span></div><div className="store-map">{mapReady ? <ReactECharts option={mapOption} style={{ height: "100%" }} /> : <span>地图载入中</span>}</div></>;
 }
 
 function CityRanks() {

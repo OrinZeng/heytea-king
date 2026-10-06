@@ -113,7 +113,8 @@ a{color:inherit;text-decoration:none}
 .product-card:hover{transform:translateY(-7px);border-color:#ccc9c3;box-shadow:0 24px 60px rgba(20,20,20,.09)}
 .product-art{height:250px;background:linear-gradient(155deg,#f8f8f6,#f0efec);display:grid;place-items:center;position:relative;color:var(--drink)}
 .product-art:after{content:"";position:absolute;width:110px;height:60px;background:var(--drink);opacity:.16;filter:blur(32px);border-radius:50%;bottom:35px}
-.product-art svg{width:110px;height:110px;stroke-width:.9;z-index:1}
+.product-art svg{width:110px;height:110px;stroke-width:2.2;z-index:1}
+.product-art .product-silhouette{filter:drop-shadow(0 8px 14px color-mix(in srgb,var(--drink) 16%,transparent))}
 .product-art img{width:100%;height:100%;object-fit:contain;padding:20px}
 .product-art>span{position:absolute;top:15px;right:15px;border-radius:999px;background:rgba(255,255,255,.88);color:#4f4c47;padding:6px 10px;font-size:.7rem;z-index:2}
 .product-card.untried .product-art{filter:grayscale(1);opacity:.62}
@@ -125,7 +126,7 @@ a{color:inherit;text-decoration:none}
 .drawer-layer aside{width:min(650px,100%);height:100%;background:#fff;padding:52px 44px;overflow-y:auto;box-shadow:-20px 0 80px rgba(0,0,0,.12);position:relative}
 .drawer-close{position:absolute;right:22px;top:22px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer}
 .drawer-hero{height:210px;border-radius:20px;background:#f4f3f0;display:grid;place-items:center;color:var(--drink);position:relative;margin-bottom:36px}
-.drawer-hero svg{width:115px;height:115px;stroke-width:.9}
+.drawer-hero svg{width:115px;height:115px;stroke-width:2.2}
 .drawer-hero span{position:absolute;left:18px;bottom:18px;background:#fff;border-radius:999px;padding:7px 12px;font-size:.72rem;color:#777}
 .drawer-layer h2{font-size:2.7rem;letter-spacing:-.04em;margin:10px 0 30px}
 .drawer-stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:16px}

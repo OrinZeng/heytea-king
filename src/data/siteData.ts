@@ -85,10 +85,11 @@ const productSeeds: Array<[string, string, number, string]> = [
 ];
 
 const palette = ["#c9a96e", "#a6b67e", "#d99b68", "#a9809a", "#92a9a3", "#c78575", "#8e826f"];
+const normalizeSeries = (series: string) => /^(冰淇淋与冰品|甜品)$/.test(series) ? "甜品与冰品" : series;
 const inferSeries = (name: string) => {
+  if (/gelato|喜拉朵|冰淇淋|手炒冰|蛋糕|布蕾|蛋挞|挞|糯米饭|蝴蝶酥|茶酥|一茶一酥|可颂|吃冰/.test(name)) return "甜品与冰品";
   if (/抹|茉|茶王|乌龙|碎银子|柠茶/.test(name)) return "纯茶与轻乳茶";
   if (/牛乳|波波|港奶|豆浆/.test(name)) return "真奶茶";
-  if (/冰|gelato|手炒/.test(name)) return "冰淇淋与冰品";
   if (/套餐|一茶/.test(name)) return "限定与联名";
   return "果茶";
 };
@@ -117,7 +118,7 @@ const researchedProducts: Product[] = generatedCatalog.map((entry, index) => {
     id: entry.id,
     name: entry.name,
     version: entry.name.match(/[（(](.+?)[）)]/)?.[1] ?? (entry.availability === "下架" ? "历史版" : "当前版"),
-    series: entry.series,
+    series: normalizeSeries(entry.series),
     year: entry.year || Number(matching.at(-1)?.date.slice(0, 4) ?? 0),
     cupCount,
     orderCount: matching.length,
@@ -143,7 +144,7 @@ const supplementalProducts: Product[] = [
     id: matching.flatMap((order) => order.items).find((item) => item.rawName === name)?.productId ?? `supplement-${index + 1}`,
     name,
     version: name.match(/[（(](.+?)[）)]/)?.[1] ?? (name.includes("限定") ? "限定版" : "经典版"),
-    series,
+    series: normalizeSeries(series),
     year,
     cupCount,
     orderCount: matching.length,
@@ -171,5 +172,3 @@ export const stores: StoreLocation[] = [
   ["深圳机场国内出发厅店", "深圳", 113.81, 22.63],
   ["南昌中山路天虹店", "南昌", 115.89, 28.68]
 ].map(([name, city, longitude, latitude]) => ({ name: String(name), city: String(city), longitude: Number(longitude), latitude: Number(latitude), visits: orders.filter((order) => order.store === name).length }));
-
-export const catalogResearchNote = `公开资料考证 ${generatedCatalog.length} 项；账单中出现但目录未收录的版本另行补档。`;

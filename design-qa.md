@@ -44,4 +44,12 @@
 - The “一单一程” page, route, navigation item, table, and CSV export control are absent from the rendered site.
 - Desktop and 375 × 812 mobile checks found no console warning or error and no document-level horizontal overflow.
 
+## Atlas taxonomy and illustration pass
+
+- Removed the public-research explanatory sentence below the atlas masthead.
+- Normalized `冰淇淋与冰品` and `甜品` into the existing `甜品与冰品` series without changing the total 259 atlas entries.
+- The merged `甜品与冰品` group contains 67 entries; neither former heading remains in the rendered filters or group headings.
+- Replaced the universal drink-cup fallback with category-aware vector silhouettes for gelato, cake, tart, pudding, pastry, shaved/hand-stirred ice, rice dessert, bottle, coffee, and drinks.
+- Existing verified product photography remains preferred; the new silhouettes are used only where a product image is unavailable.
+
 final result: passed

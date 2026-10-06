@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { Link, Route, Routes, useLocation } from "react-router-dom";
-import { catalogResearchNote, orders, products, stores } from "./data/siteData";
+import { orders, products, stores } from "./data/siteData";
 import aggregateData from "./data/aggregates.generated.json";
 import type { Product } from "./types";
 
@@ -357,7 +357,7 @@ function AtlasSection() {
   }).sort((a, b) => sort === "cups" ? b.cupCount - a.cupCount : sort === "year" ? b.year - a.year : a.series.localeCompare(b.series, "zh-CN"));
 
   return <section className="atlas-section page-width" id="atlas">
-    <PageMasthead eyebrow="THE COMPLETE COLLECTION" title="杯中万象" subtitle="喜茶历年产品图鉴" note={catalogResearchNote} />
+    <PageMasthead eyebrow="THE COMPLETE COLLECTION" title="杯中万象" subtitle="喜茶历年产品图鉴" />
     <div className="atlas-summary"><span><b>{products.filter((p) => p.cupCount > 0).length}</b> 已饮</span><span><b>{products.filter((p) => p.cupCount === 0).length}</b> 未饮</span><span><b>{products.length}</b> 图鉴条目</span></div>
     <div className="filters sticky-filters">
       <label className="search-field"><Search /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索产品、版本或系列" /></label>
@@ -376,7 +376,7 @@ function ProductCard({ product, index, onSelect }: { product: Product; index: nu
   const tried = product.cupCount > 0;
   return <motion.button className={`product-card ${tried ? "tried" : "untried"}`} onClick={onSelect} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: Math.min(index * 0.025, 0.4) }}>
     <div className="product-art" style={{ "--drink": product.color } as React.CSSProperties}>
-      {product.image ? <img src={product.image} alt={product.name} /> : <CupSoda aria-hidden="true" />}
+      {product.image ? <img src={product.image} alt={product.name} /> : <ProductIllustration product={product} />}
       <span>{tried ? `${product.cupCount} 杯` : "未饮"}</span>
     </div>
     <div className="product-copy"><small>{product.series} · {product.year || "年份待考"}</small><h3>{product.name}</h3><p>{product.version}</p></div>
@@ -398,7 +398,7 @@ function ProductDrawer({ product, onClose }: { product: Product; onClose: () => 
   return <motion.div className="drawer-layer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} role="dialog" aria-modal="true" aria-label={product.name} onMouseDown={(event) => event.currentTarget === event.target && onClose()}>
     <motion.aside initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", damping: 30, stiffness: 260 }}>
       <button className="drawer-close" onClick={onClose} aria-label="关闭"><X /></button>
-      <div className="drawer-hero" style={{ "--drink": product.color } as React.CSSProperties}>{product.image ? <img src={product.image} alt={product.name} /> : <CupSoda />}<span>{product.series}</span></div>
+      <div className="drawer-hero" style={{ "--drink": product.color } as React.CSSProperties}>{product.image ? <img src={product.image} alt={product.name} /> : <ProductIllustration product={product} />}<span>{product.series}</span></div>
       <p className="kicker">{product.year || "年份待考"} · {product.version}{product.availability ? ` · ${product.availability}` : ""}</p><h2>{product.name}</h2>
       <div className="drawer-stats"><article><span>喝过</span><strong>{product.cupCount}</strong><small>杯</small></article><article><span>涉及</span><strong>{product.orderCount}</strong><small>单</small></article><article><span>到访</span><strong>{product.stores.length}</strong><small>店</small></article></div>
       <div className="detail-pairs"><div><span>首次购买</span><b>{product.firstPurchased ?? "尚未喝过"}</b></div><div><span>最近一次</span><b>{product.lastPurchased ?? "—"}</b></div><div><span>覆盖城市</span><b>{product.cities.join("、") || "—"}</b></div><div><span>图片状态</span><b>{product.imageStatus === "official" ? "官方资料" : "资料待补"}</b></div></div>
@@ -409,8 +409,55 @@ function ProductDrawer({ product, onClose }: { product: Product; onClose: () => 
   </motion.div>;
 }
 
-function PageMasthead({ eyebrow, title, subtitle, note }: { eyebrow: string; title: string; subtitle: string; note: string }) {
-  return <header className="page-masthead"><p className="kicker">{eyebrow}</p><h1>{title}</h1><span>{subtitle}</span><div className="hairline" /><p>{note}</p></header>;
+function ProductIllustration({ product }: { product: Product }) {
+  const name = product.name.toLowerCase();
+  const common = { fill: "none", stroke: "currentColor", strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+
+  if (/gelato|喜拉朵|冰淇淋/.test(name)) return <svg className="product-silhouette gelato-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+    <path d="M35 52h50l-6 47H41z" fill="currentColor" fillOpacity=".08" />
+    <path d="M39 51c-7-6-2-17 7-17-1-10 13-16 20-8 9-7 23 1 20 12 9 3 9 14-1 16" />
+    <path d="M35 52h50l-6 47H41zM47 71c9 5 17 5 26 0" />
+  </svg>;
+  if (/蛋糕|巴斯克|熔岩/.test(name)) return <svg className="product-silhouette cake-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+    <path d="M26 85 52 35l43 24-17 38z" fill="currentColor" fillOpacity=".08" />
+    <path d="M26 85 52 35l43 24-17 38zM34 70l51 14M52 35l-1 17M51 52c14-4 28 3 37 13" />
+    <path d="M50 33c2-8 10-11 14-4" />
+  </svg>;
+  if (/蛋挞|布蕾挞|麻薯蛋挞|芋泥挞|可颂挞/.test(name)) return <svg className="product-silhouette tart-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+    <ellipse cx="60" cy="45" rx="34" ry="14" fill="currentColor" fillOpacity=".08" />
+    <path d="M26 45h68L84 91H36zM26 45c0-8 15-14 34-14s34 6 34 14-15 14-34 14-34-6-34-14zM42 47c8-5 28-5 36 0" />
+  </svg>;
+  if (/布蕾/.test(name)) return <svg className="product-silhouette pudding-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+    <path d="M35 38h50l7 49c1 9-7 16-16 16H44c-9 0-17-7-16-16z" fill="currentColor" fillOpacity=".08" />
+    <path d="M35 38h50l7 49c1 9-7 16-16 16H44c-9 0-17-7-16-16zM35 38c0-7 11-12 25-12s25 5 25 12-11 12-25 12-25-5-25-12zM39 72c13 5 29 5 42 0" />
+  </svg>;
+  if (/蝴蝶酥|茶酥|一茶一酥|可颂|西多士/.test(name)) return <svg className="product-silhouette pastry-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+    <path d="M24 72c8-30 25-42 36-22 11-20 28-8 36 22-11 19-25 22-36 8-11 14-25 11-36-8z" fill="currentColor" fillOpacity=".08" />
+    <path d="M24 72c8-30 25-42 36-22 11-20 28-8 36 22-11 19-25 22-36 8-11 14-25 11-36-8zM39 58c6 11 8 19 6 29M81 58c-6 11-8 19-6 29M60 50v30" />
+  </svg>;
+  if (/手炒冰|吃冰|波波冰|抹茶冰|乌龙冰/.test(name)) return <svg className="product-silhouette ice-bowl-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+    <path d="M23 55h74c-3 25-17 40-37 40S26 80 23 55z" fill="currentColor" fillOpacity=".08" />
+    <path d="M23 55h74c-3 25-17 40-37 40S26 80 23 55zM34 51c4-18 18-25 28-13 8-12 24-4 24 13M44 95h32" />
+    <circle cx="49" cy="51" r="3" fill="currentColor" fillOpacity=".35" /><circle cx="69" cy="45" r="3" fill="currentColor" fillOpacity=".35" />
+  </svg>;
+  if (/糯米饭/.test(name)) return <svg className="product-silhouette rice-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+    <path d="M25 56h70c-2 27-17 41-35 41S27 83 25 56z" fill="currentColor" fillOpacity=".08" />
+    <path d="M25 56h70c-2 27-17 41-35 41S27 83 25 56zM35 55c3-18 14-25 25-13 10-12 24-5 26 13" />
+    <path d="m42 45 6-12M78 45l-6-12" />
+  </svg>;
+  if (/瓶|康普茶/.test(name)) return <svg className="product-silhouette bottle-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+    <path d="M47 23h26v18c0 6 9 10 9 20v36H38V61c0-10 9-14 9-20z" fill="currentColor" fillOpacity=".08" />
+    <path d="M47 23h26v18c0 6 9 10 9 20v36H38V61c0-10 9-14 9-20zM47 33h26M43 68h34" />
+  </svg>;
+  if (/咖啡/.test(name)) return <svg className="product-silhouette coffee-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+    <path d="M27 46h58v40c0 8-7 14-15 14H42c-8 0-15-6-15-14z" fill="currentColor" fillOpacity=".08" />
+    <path d="M27 46h58v40c0 8-7 14-15 14H42c-8 0-15-6-15-14zM85 57h7c14 0 14 24 0 24h-7M43 32c-5 6 5 8 0 14M61 28c-5 7 5 10 0 17" />
+  </svg>;
+  return <CupSoda className="product-silhouette drink-shape" aria-hidden="true" />;
+}
+
+function PageMasthead({ eyebrow, title, subtitle, note }: { eyebrow: string; title: string; subtitle: string; note?: string }) {
+  return <header className="page-masthead"><p className="kicker">{eyebrow}</p><h1>{title}</h1><span>{subtitle}</span><div className="hairline" />{note && <p>{note}</p>}</header>;
 }
 
 function SiteFooter() {

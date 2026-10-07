@@ -87,10 +87,11 @@ const productSeeds: Array<[string, string, number, string]> = [
 const palette = ["#c9a96e", "#a6b67e", "#d99b68", "#a9809a", "#92a9a3", "#c78575", "#8e826f"];
 const normalizeSeries = (series: string) => /^(冰淇淋与冰品|甜品)$/.test(series) ? "甜品与冰品" : series;
 const inferSeries = (name: string) => {
+  if (/咖啡|拿铁/.test(name)) return "咖啡";
   if (/gelato|喜拉朵|冰淇淋|手炒冰|蛋糕|布蕾|蛋挞|挞|糯米饭|蝴蝶酥|茶酥|一茶一酥|可颂|吃冰/.test(name)) return "甜品与冰品";
+  if (/套餐|一茶|落地签|沪照|有礼/.test(name)) return "限定与联名";
   if (/抹|茉|茶王|乌龙|碎银子|柠茶/.test(name)) return "纯茶与轻乳茶";
   if (/牛乳|波波|港奶|豆浆/.test(name)) return "真奶茶";
-  if (/套餐|一茶/.test(name)) return "限定与联名";
   return "果茶";
 };
 const localProductImages: Record<string, string> = {
@@ -99,7 +100,44 @@ const localProductImages: Record<string, string> = {
   "杨桃三重甘": "yang-tao-san-chong-gan.jpg",
   "烤黑糖波波牛乳茶": "kao-hei-tang-bo-bo.jpg",
   "芒芒甘露（首创）": "mang-mang-gan-lu.jpg",
+  "六一·节日限定套餐": "liu-yi-jie-ri-tao-can.jpg",
+  "老广鲜腐竹豆浆": "lao-guang-xian-fu-zhu-dou-jiang.jpg",
+  "岩瑞香·玫瑰荔枝gelato": "gong-yi-gelato.jpg",
+  "岩瑞香·柚子青柠gelato": "gong-yi-gelato.jpg",
+  "芝芝多肉杨梅": "zhi-zhi-duo-rou-yang-mei.jpg",
+  "奥利奥波波茶": "ao-li-ao-bo-bo-cha.jpg",
+  "超级植物茶": "chao-ji-zhi-wu-cha.jpg",
+  "豆豆波波茶": "dou-dou-bo-bo-cha.jpg",
+  "金凤茶酥": "jin-feng-cha-su.jpg",
+  "金凤茶王": "jin-feng-cha-wang.jpg",
+  "满杯百香果": "man-bei-bai-xiang-guo.jpg",
+  "满杯橙橙": "man-bei-cheng-cheng.jpg",
+  "双榨杨桃油柑": "shuang-zha-yang-tao-you-gan.jpg",
+  "四季春": "si-ji-chun.jpg",
+  "喜茶咖啡": "xi-cha-ka-fei.jpg",
+  "拿铁": "xi-cha-ka-fei.jpg",
+  "芋泥波波牛乳": "yu-ni-bo-bo-niu-ru.jpg",
+  "芝芝金凤茶王": "zhi-zhi-jin-feng-cha-wang.jpg",
+  "芝芝绿妍": "zhi-zhi-lv-yan.jpg",
+  "芝芝芒芒": "zhi-zhi-mang-mang.jpg",
+  "芝芝莓莓": "zhi-zhi-mei-mei.jpg",
 };
+
+const supplementalImageAliases: Record<string, string> = {
+  "芝芝多肉葡萄（首创）": "多肉葡萄（首创）",
+  "柠打·九窖茉王": "柠打·九窨茉王",
+  "微黄皮桃": "微醺黄皮桃",
+  "多肉桃李（首创)": "多肉桃李（首创）",
+  "苦巧·咸酪(不含茶)": "苦巧·咸酪（不含茶）",
+  "双杯·人气必喝": "人气双杯",
+  "岩兰2": "岩兰 2",
+  "岩兰7": "岩兰 7",
+  "羽衣甘蓝纤体瓶": "羽衣纤体瓶（首创）",
+  "芝芝绿妍茶后": "芝芝绿妍茶后（首创）",
+  "周三·一茶两酥": "一茶一酥",
+};
+
+const catalogByName = new Map(generatedCatalog.map((product) => [product.name, product]));
 
 const catalogNames = new Set(generatedCatalog.map((product) => product.name));
 const manualExtras = productSeeds.filter(([name]) => !catalogNames.has(name));
@@ -140,6 +178,13 @@ const supplementalProducts: Product[] = [
 ].map(([name, series, year, color], index) => {
   const { matching, cupCount } = purchaseStats(name);
   const localImage = localProductImages[name];
+  const aliasEntry = catalogByName.get(supplementalImageAliases[name]);
+  const image = aliasEntry?.image
+    ? `${import.meta.env.BASE_URL}${aliasEntry.image}`
+    : localImage
+      ? `${import.meta.env.BASE_URL}assets/products/${localImage}`
+      : undefined;
+  const source = aliasEntry?.imageSource ?? productSources[name as keyof typeof productSources];
   return {
     id: matching.flatMap((order) => order.items).find((item) => item.rawName === name)?.productId ?? `supplement-${index + 1}`,
     name,
@@ -152,9 +197,9 @@ const supplementalProducts: Product[] = [
     lastPurchased: matching.at(0)?.date,
     stores: [...new Set(matching.map((order) => order.store))],
     cities: [...new Set(matching.map((order) => order.city))],
-    image: localImage ? `${import.meta.env.BASE_URL}assets/products/${localImage}` : undefined,
-    imageStatus: localImage ? "official" : "placeholder",
-    source: productSources[name as keyof typeof productSources],
+    image,
+    imageStatus: aliasEntry ? "official" : localImage ? "verified" : "placeholder",
+    source,
     availability: "资料补录",
     color,
   };

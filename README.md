@@ -19,7 +19,7 @@
 
 菜单索引来自[咖啡奶茶喝什么的喜茶菜单](https://www.nckfhsm.com/brands/xi-cha/menu/available)，其单品图片链接指向 `go.cdn.heytea.com`。账单别名会优先匹配同一官方版本；历史产品与门店限定款再由品牌发布、新闻报道和菜单资料补充。已下载图片的原始 URL 保存在 `src/data/catalog.generated.json` 与 `src/data/product-sources.json`，可用 `python3 scripts/fetch_supplemental_images.py` 重建补录素材。所有品牌与产品素材权利归原权利人所有，本项目为个人非商业数据档案。
 
-当前 259 个图鉴条目中有 250 个配有可核验图片；其余 9 个因缺少能够确认到具体版本的可靠图片，或本身是泛称与活动权益，继续使用“资料待补”剪影。
+当前 259 个图鉴条目中有 240 个配有可核验图片，10 个有来源但视觉形式不适合直接作为展品图的条目改用统一品类插画；其余 9 个因缺少能够确认到具体版本的可靠图片，或本身是泛称与活动权益，继续使用“资料待补”剪影。
 
 门店足迹使用 [DataV.GeoAtlas](https://datav.aliyun.com/portal/school/atlas/area_selector) 的中国省级 GeoJSON 边界数据，叠加本项目中已核验的门店经纬度；地图仅在浏览器本地渲染。
 

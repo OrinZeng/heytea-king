@@ -404,7 +404,7 @@ function ProductDrawer({ product, onClose }: { product: Product; onClose: () => 
       <div className="drawer-hero" style={{ "--drink": product.color } as React.CSSProperties}>{product.image ? <img src={product.image} alt={product.name} /> : <ProductIllustration product={product} />}<span>{product.series}</span></div>
       <p className="kicker">{product.year || "年份待考"} · {product.version}{product.availability ? ` · ${product.availability}` : ""}</p><h2>{product.name}</h2>
       <div className="drawer-stats"><article><span>喝过</span><strong>{product.cupCount}</strong><small>杯</small></article><article><span>涉及</span><strong>{product.orderCount}</strong><small>单</small></article><article><span>到访</span><strong>{product.stores.length}</strong><small>店</small></article></div>
-      <div className="detail-pairs"><div><span>首次购买</span><b>{product.firstPurchased ?? "尚未喝过"}</b></div><div><span>最近一次</span><b>{product.lastPurchased ?? "—"}</b></div><div><span>覆盖城市</span><b>{product.cities.join("、") || "—"}</b></div><div><span>图片状态</span><b>{product.imageStatus === "official" ? "官方资料" : product.imageStatus === "verified" ? "公开资料" : "资料待补"}</b></div></div>
+      <div className="detail-pairs"><div><span>首次购买</span><b>{product.firstPurchased ?? "尚未喝过"}</b></div><div><span>最近一次</span><b>{product.lastPurchased ?? "—"}</b></div><div><span>覆盖城市</span><b>{product.cities.join("、") || "—"}</b></div><div><span>图片状态</span><b>{product.imageStatus === "official" ? "官方资料" : product.imageStatus === "verified" ? "公开资料" : product.imageStatus === "illustrated" ? "统一插画" : "资料待补"}</b></div></div>
       {product.source && <a className="source-link" href={product.source} target="_blank" rel="noreferrer">查看图片原始来源 <ChevronRight /></a>}
       <h3 className="drawer-section-title">购买履历</h3>
       <div className="purchase-history">{matching.length ? matching.map((order) => <div key={order.id}><time>{order.date}</time><span>{order.store}</span><b>{currency(order.amount)}</b></div>) : <p>这杯尚未出现在订单里。</p>}</div>
@@ -448,7 +448,7 @@ function ProductIllustration({ product }: { product: Product }) {
     <path d="M25 56h70c-2 27-17 41-35 41S27 83 25 56zM35 55c3-18 14-25 25-13 10-12 24-5 26 13" />
     <path d="m42 45 6-12M78 45l-6-12" />
   </svg>;
-  if (/瓶|康普茶/.test(name)) return <svg className="product-silhouette bottle-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
+  if (/瓶|康普茶|植物茶/.test(name)) return <svg className="product-silhouette bottle-shape" viewBox="0 0 120 120" aria-hidden="true" {...common}>
     <path d="M47 23h26v18c0 6 9 10 9 20v36H38V61c0-10 9-14 9-20z" fill="currentColor" fillOpacity=".08" />
     <path d="M47 23h26v18c0 6 9 10 9 20v36H38V61c0-10 9-14 9-20zM47 33h26M43 68h34" />
   </svg>;

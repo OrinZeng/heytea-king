@@ -123,6 +123,22 @@ const localProductImages: Record<string, string> = {
   "芝芝莓莓": "zhi-zhi-mei-mei.jpg",
 };
 
+// Full posters, screenshots and lifestyle compositions read too loudly inside
+// the quiet collection grid. Keep their citations, but render these entries as
+// the same restrained category illustration used by the rest of the archive.
+const illustratedSupplementals = new Set([
+  "超级植物茶",
+  "金凤茶王",
+  "六一·节日限定套餐",
+  "满杯百香果",
+  "四季春",
+  "芋泥波波牛乳",
+  "芝芝金凤茶王",
+  "芝芝绿妍",
+  "芝芝芒芒",
+  "芝芝莓莓",
+]);
+
 const supplementalImageAliases: Record<string, string> = {
   "芝芝多肉葡萄（首创）": "多肉葡萄（首创）",
   "柠打·九窖茉王": "柠打·九窨茉王",
@@ -177,7 +193,7 @@ const supplementalProducts: Product[] = [
   ...orderedExtras.map((name, index) => [name, inferSeries(name), Number([...orders].reverse().find((order) => order.items.some((item) => item.rawName === name))?.date.slice(0, 4) ?? 0), palette[index % palette.length]] as [string, string, number, string]),
 ].map(([name, series, year, color], index) => {
   const { matching, cupCount } = purchaseStats(name);
-  const localImage = localProductImages[name];
+  const localImage = illustratedSupplementals.has(name) ? undefined : localProductImages[name];
   const aliasEntry = catalogByName.get(supplementalImageAliases[name]);
   const image = aliasEntry?.image
     ? `${import.meta.env.BASE_URL}${aliasEntry.image}`
@@ -198,7 +214,7 @@ const supplementalProducts: Product[] = [
     stores: [...new Set(matching.map((order) => order.store))],
     cities: [...new Set(matching.map((order) => order.city))],
     image,
-    imageStatus: aliasEntry ? "official" : localImage ? "verified" : "placeholder",
+    imageStatus: aliasEntry ? "official" : localImage ? "verified" : illustratedSupplementals.has(name) ? "illustrated" : "placeholder",
     source,
     availability: "资料补录",
     color,

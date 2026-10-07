@@ -31,7 +31,7 @@ export interface Product {
   stores: string[];
   cities: string[];
   image?: string;
-  imageStatus: "official" | "verified" | "placeholder";
+  imageStatus: "official" | "verified" | "illustrated" | "placeholder";
   source?: string;
   availability?: string;
   color: string;

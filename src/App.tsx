@@ -110,13 +110,16 @@ function HomePage() {
 
   const monthlyOption = {
     animationDuration: 1000,
-    tooltip: { trigger: "axis", valueFormatter: (value: number) => currency(value) },
+    tooltip: { trigger: "axis" },
     grid: { left: 44, right: 38, top: 48, bottom: 36 },
     xAxis: { type: "category", data: monthly.map(([month]) => month.slice(2)), axisLine: { lineStyle: { color: "#d9d9d6" } }, axisTick: { show: false }, axisLabel: { color: "#8b8984" } },
-    yAxis: { type: "value", splitLine: { lineStyle: { color: "#efefed" } }, axisLabel: { color: "#9b9994", formatter: "¥{value}" } },
+    yAxis: [
+      { type: "value", splitLine: { lineStyle: { color: "#efefed" } }, axisLabel: { color: "#9b9994", formatter: "¥{value}" } },
+      { type: "value", minInterval: 1, splitLine: { show: false }, axisLabel: { color: "#b6814e", formatter: "{value} 单" } },
+    ],
     series: [
-      { type: "bar", name: "实付金额", data: monthly.map(([, value]) => value.amount.toFixed(2)), itemStyle: { color: ink, borderRadius: [4, 4, 0, 0] }, barMaxWidth: 28 },
-      { type: "line", name: "订单数", yAxisIndex: 0, data: monthly.map(([, value]) => value.orders * 12), lineStyle: { color: gold, width: 2 }, itemStyle: { color: gold }, symbolSize: 7 },
+      { type: "bar", name: "实付金额", data: monthly.map(([, value]) => value.amount.toFixed(2)), tooltip: { valueFormatter: (value: number) => currency(value) }, itemStyle: { color: ink, borderRadius: [4, 4, 0, 0] }, barMaxWidth: 28 },
+      { type: "line", name: "订单数", yAxisIndex: 1, data: monthly.map(([, value]) => value.orders), tooltip: { valueFormatter: (value: number) => `${value} 单` }, lineStyle: { color: gold, width: 2 }, itemStyle: { color: gold }, symbolSize: 7 },
     ],
   };
 

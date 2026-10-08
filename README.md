@@ -54,6 +54,8 @@ pnpm import:pdf -- /absolute/path/to/喜茶.pdf
 
 流程会渲染 PDF、运行本地中文 OCR、重建表格与商品、写出脱敏 JSON，并在 `data/private/diff-report.md` 生成新旧差异。提交前应检查 `data/private/import-review.md` 和页面统计。
 
+下载新图片后运行 `python3 scripts/optimize_images.py`，会把图片统一缩放为不超过 640px 的 WebP 并更新路径引用。
+
 更新公开图鉴：
 
 ```bash

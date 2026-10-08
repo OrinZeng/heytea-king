@@ -1,6 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import * as echarts from "echarts";
-import ReactECharts from "echarts-for-react";
 import {
   CalendarDays,
   ChevronRight,
@@ -18,6 +16,7 @@ import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { orders, products, stores } from "./data/siteData";
 import aggregateData from "./data/aggregates.generated.json";
 import type { Product } from "./types";
+import { LazyChart } from "./lib/LazyChart";
 
 const ink = "#141414";
 const gold = "#bd8a59";
@@ -51,7 +50,7 @@ function SiteHeader() {
   return (
     <header className={`site-header ${heroHidden ? "header-hidden" : ""}`}>
       <Link className="brand-lockup" to="/" aria-label="Heytea King 首页">
-        <img src={`${import.meta.env.BASE_URL}assets/heytea-logo.png`} alt="" />
+        <img src={`${import.meta.env.BASE_URL}assets/heytea-logo-small.webp`} alt="" width={42} height={42} />
         <span><strong>Heytea King</strong><small>杯盏纪年</small></span>
       </Link>
       <span className="header-sequence">杯盏纪年 · 杯中万象</span>
@@ -128,8 +127,10 @@ function HomePage() {
       <section className="hero" aria-label="喜茶品牌封面">
         <motion.img
           style={reduced ? undefined : { scale, opacity }}
-          src={`${import.meta.env.BASE_URL}assets/heytea-logo.png`}
+          src={`${import.meta.env.BASE_URL}assets/heytea-logo.webp`}
           alt="HEYTEA 喜茶"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 
@@ -164,7 +165,7 @@ function HomePage() {
         <Reveal><ChapterTitle eyebrow="CHAPTER 02" title="时光入盏" /></Reveal>
         <Reveal className="panel chart-panel">
           <div className="panel-heading"><div><h3>月度消费趋势</h3><p>柱形为实付金额，金色折线映照订单频次。</p></div><span>{monthly.length} 个月</span></div>
-          <ReactECharts option={monthlyOption} style={{ height: 390 }} />
+          <LazyChart option={monthlyOption} style={{ height: 390 }} />
         </Reveal>
         <YearCompare />
       </section>
@@ -249,33 +250,37 @@ function Heatmap() {
     visualMap: { min: 0, max: maxValue, show: false, inRange: { color: ["#f1f1ef", "#c7c7c2", "#797974", ink] } },
     series: [{ type: "heatmap", data: values, label: { show: true, color: "#666" }, itemStyle: { borderRadius: 7, borderColor: "#fff", borderWidth: 4 } }],
   };
-  return <><div className="panel-heading"><div><h3>星期 × 时段分布</h3><p>颜色越深，越常在这个时刻下单。</p></div><span>08—22</span></div><ReactECharts option={option} style={{ height: 350 }} /></>;
+  return <><div className="panel-heading"><div><h3>星期 × 时段分布</h3><p>颜色越深，越常在这个时刻下单。</p></div><span>08—22</span></div><LazyChart option={option} style={{ height: 350 }} /></>;
 }
 
 function ChannelChart() {
   const channels = unique(orders.map((order) => order.channel)).map((name) => ({ name, value: orders.filter((order) => order.channel === name).length }));
   const option = { tooltip: { trigger: "item" }, color: [ink, gold, "#c7c5c0", "#ecebe8"], series: [{ type: "pie", radius: ["55%", "76%"], center: ["45%", "52%"], data: channels, label: { formatter: "{b}\n{d}%", color: "#555" }, itemStyle: { borderColor: "#fff", borderWidth: 4 } }] };
-  return <><h3>下单渠道</h3><p className="panel-note">按有效订单统计</p><ReactECharts option={option} style={{ height: 310 }} /></>;
+  return <><h3>下单渠道</h3><p className="panel-note">按有效订单统计</p><LazyChart option={option} style={{ height: 310 }} /></>;
 }
 
 function PriceBands() {
   const bands = [["0 元", 0, 0.01], ["0–15", 0.01, 15], ["15–20", 15, 20], ["20–30", 20, 30], ["30–50", 30, 50], ["50+", 50, Infinity]] as const;
   const data = bands.map(([name, min, max]) => ({ name, value: orders.filter((order) => order.amount >= min && order.amount < max).length }));
   const option = { grid: { left: 36, right: 20, top: 32, bottom: 42 }, xAxis: { type: "category", data: data.map((d) => d.name), axisLine: { lineStyle: { color: "#ddd" } }, axisTick: { show: false } }, yAxis: { type: "value", splitLine: { lineStyle: { color: "#eee" } } }, series: [{ type: "bar", data: data.map((d) => d.value), itemStyle: { color: ink, borderRadius: [5, 5, 0, 0] }, label: { show: true, position: "top" } }] };
-  return <><h3>订单价格带</h3><p className="panel-note">一杯与一单之间的日常尺度</p><ReactECharts option={option} style={{ height: 310 }} /></>;
+  return <><h3>订单价格带</h3><p className="panel-note">一杯与一单之间的日常尺度</p><LazyChart option={option} style={{ height: 310 }} /></>;
 }
 
 function StoreMap() {
   const [mapReady, setMapReady] = useState(false);
+  const [mapFailed, setMapFailed] = useState(false);
 
   useEffect(() => {
     let active = true;
-    fetch(`${import.meta.env.BASE_URL}assets/china-provinces.geojson`)
-      .then((response) => response.json())
-      .then((geoJson) => {
-        echarts.registerMap("heytea-china", geoJson);
+    Promise.all([
+      import("./lib/charts"),
+      fetch(`${import.meta.env.BASE_URL}assets/china-provinces.geojson`).then((response) => response.json()),
+    ])
+      .then(([charts, geoJson]) => {
+        charts.registerMap("heytea-china", geoJson);
         if (active) setMapReady(true);
-      });
+      })
+      .catch(() => { if (active) setMapFailed(true); });
     return () => { active = false; };
   }, []);
 
@@ -312,7 +317,7 @@ function StoreMap() {
     }],
   };
 
-  return <><div className="panel-heading"><div><h3>门店足迹</h3><p>拖动与缩放地图，悬停查看具体门店。</p></div><span>{stores.length} 家</span></div><div className="store-map">{mapReady ? <ReactECharts option={mapOption} style={{ height: "100%" }} /> : <span>地图载入中</span>}</div></>;
+  return <><div className="panel-heading"><div><h3>门店足迹</h3><p>拖动与缩放地图，悬停查看具体门店。</p></div><span>{stores.length} 家</span></div><div className="store-map">{mapReady ? <LazyChart option={mapOption} style={{ height: "100%" }} /> : <span>{mapFailed ? "地图载入失败，请稍后刷新重试" : "地图载入中"}</span>}</div></>;
 }
 
 function CityRanks() {
@@ -363,7 +368,7 @@ function AtlasSection() {
     <PageMasthead eyebrow="THE COMPLETE COLLECTION" title="杯中万象" subtitle="喜茶历年产品图鉴" />
     <div className="atlas-summary"><span><b>{products.filter((p) => p.cupCount > 0).length}</b> 已饮</span><span><b>{products.filter((p) => p.cupCount === 0).length}</b> 未饮</span><span><b>{products.length}</b> 图鉴条目</span></div>
     <div className="filters sticky-filters">
-      <label className="search-field"><Search /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索产品、版本或系列" /></label>
+      <label className="search-field"><Search /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索产品、版本或系列" aria-label="搜索产品" /></label>
       <select value={series} onChange={(event) => setSeries(event.target.value)} aria-label="筛选系列">{seriesOptions.map((item) => <option key={item}>{item}</option>)}</select>
       <select value={year} onChange={(event) => setYear(event.target.value)} aria-label="筛选年份">{yearOptions.map((item) => <option value={item} key={item}>{item === "0" ? "年份待考" : item}</option>)}</select>
       <select value={status} onChange={(event) => setStatus(event.target.value)} aria-label="筛选饮用状态"><option>全部状态</option><option>已饮</option><option>未饮</option></select>
@@ -379,7 +384,7 @@ function ProductCard({ product, index, onSelect }: { product: Product; index: nu
   const tried = product.cupCount > 0;
   return <motion.button className={`product-card ${tried ? "tried" : "untried"}`} onClick={onSelect} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: Math.min(index * 0.025, 0.4) }}>
     <div className="product-art" style={{ "--drink": product.color } as React.CSSProperties}>
-      {product.image ? <img src={product.image} alt={product.name} /> : <ProductIllustration product={product} />}
+      {product.image ? <img src={product.image} alt={product.name} loading="lazy" decoding="async" width={480} height={480} /> : <ProductIllustration product={product} />}
       <span>{tried ? `${product.cupCount} 杯` : "未饮"}</span>
     </div>
     <div className="product-copy"><small>{product.series} · {product.year || "年份待考"}</small><h3>{product.name}</h3><p>{product.version}</p></div>
@@ -464,7 +469,7 @@ function PageMasthead({ eyebrow, title, subtitle, note }: { eyebrow: string; tit
 }
 
 function SiteFooter() {
-  return <footer><img src={`${import.meta.env.BASE_URL}assets/heytea-logo.png`} alt="" /><div><strong>Heytea King</strong><span>杯盏纪年 · 数据截至 {orders[0]?.date.replaceAll("-", ".")}</span></div><p>个人非商业数据档案。品牌与产品素材权利归原权利人所有。</p></footer>;
+  return <footer><img src={`${import.meta.env.BASE_URL}assets/heytea-logo-small.webp`} alt="" width={42} height={42} /><div><strong>Heytea King</strong><span>杯盏纪年 · 数据截至 {orders[0]?.date.replaceAll("-", ".")}</span></div><p>个人非商业数据档案。品牌与产品素材权利归原权利人所有。</p></footer>;
 }
 
 export default App;

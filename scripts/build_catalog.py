@@ -60,9 +60,10 @@ def enrich(item: dict) -> dict:
     if image_source:
         suffix = "." + image_source.split("?")[0].split(".")[-1].lower()
         destination = IMAGE_DIR / f"{slug}{suffix}"
-        if not destination.exists():
+        optimized = destination.with_suffix(".webp")  # produced by scripts/optimize_images.py
+        if not destination.exists() and not optimized.exists():
             destination.write_bytes(get_bytes(image_source))
-        image = f"assets/catalog/{destination.name}"
+        image = f"assets/catalog/{optimized.name if optimized.exists() else destination.name}"
     name = item["name"]
     if re.search(r"蛋糕|蝴蝶酥|布蕾|挞|酥|糯米饭|喜拉朵|冰淇淋", name):
         series = "甜品与冰品"

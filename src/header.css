@@ -1,11 +1,13 @@
 .site-header {
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.45s ease, transform 0.45s ease, visibility 0s linear 0s;
 }
 
 .site-header.header-hidden {
   opacity: 0;
   transform: translateY(-100%);
   pointer-events: none;
+  visibility: hidden;
+  transition-delay: 0s, 0s, 0.45s;
 }
 
 .drawer-hero img {

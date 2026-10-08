@@ -6,6 +6,14 @@ export default defineConfig({
   base: "/heytea-king/",
   build: {
     target: "es2020",
-    sourcemap: true,
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom", "react-router-dom"],
+          motion: ["motion"],
+        },
+      },
+    },
   },
 });

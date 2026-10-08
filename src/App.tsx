@@ -1,16 +1,19 @@
-import { useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import * as echarts from "echarts";
 import ReactECharts from "echarts-for-react";
 import {
   CalendarDays,
+  ChevronLeft,
   ChevronRight,
   CircleDollarSign,
   CupSoda,
   MapPin,
+  RotateCcw,
   Search,
   SlidersHorizontal,
   Sparkles,
   Store,
+  ArrowUp,
   X,
 } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "motion/react";
@@ -72,6 +75,49 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
       {children}
     </motion.div>
   );
+}
+
+function LazyChart({ option, height }: { option: object; height: number | string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [near, setNear] = useState(false);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || typeof IntersectionObserver === "undefined") { setNear(true); return; }
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setNear(true); observer.disconnect(); } }, { rootMargin: "240px 0px" });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  return <div ref={ref} style={{ height }}>{near && <ReactECharts option={option} style={{ height: "100%" }} />}</div>;
+}
+
+const chapters = [
+  ["between", "一杯之间"], ["time", "时光入盏"], ["moments", "饮茶时刻"],
+  ["places", "杯行何处"], ["numbers", "数字有意"], ["calendar", "杯盏日历"], ["atlas", "杯中万象"],
+] as const;
+
+function ChapterRail() {
+  const [active, setActive] = useState("");
+  const [showTop, setShowTop] = useState(false);
+  useEffect(() => {
+    const nodes = chapters.map(([id]) => document.getElementById(id)).filter((node): node is HTMLElement => Boolean(node));
+    const update = () => {
+      setShowTop(window.scrollY > window.innerHeight * 0.8);
+      const line = window.innerHeight * 0.4;
+      const current = nodes.filter((node) => node.getBoundingClientRect().top <= line).at(-1);
+      setActive(current?.id ?? "");
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
+  }, []);
+  const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  return <>
+    <nav className={`chapter-rail ${showTop ? "visible" : ""}`} aria-label="章节导航">
+      {chapters.map(([id, label]) => <button key={id} className={active === id ? "active" : ""} onClick={() => go(id)} aria-label={label} aria-current={active === id ? "true" : undefined}><i /><span>{label}</span></button>)}
+    </nav>
+    <button className={`back-top ${showTop ? "visible" : ""}`} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="回到顶部"><ArrowUp /></button>
+  </>;
 }
 
 function ChapterTitle({ eyebrow, title, note }: { eyebrow: string; title: string; note?: string }) {
@@ -160,16 +206,16 @@ function HomePage() {
         </Reveal>
       </section>
 
-      <section className="chapter page-width">
+      <section className="chapter page-width" id="time">
         <Reveal><ChapterTitle eyebrow="CHAPTER 02" title="时光入盏" /></Reveal>
         <Reveal className="panel chart-panel">
           <div className="panel-heading"><div><h3>月度消费趋势</h3><p>柱形为实付金额，金色折线映照订单频次。</p></div><span>{monthly.length} 个月</span></div>
-          <ReactECharts option={monthlyOption} style={{ height: 390 }} />
+          <LazyChart option={monthlyOption} height={390} />
         </Reveal>
         <YearCompare />
       </section>
 
-      <section className="chapter page-width">
+      <section className="chapter page-width" id="moments">
         <Reveal><ChapterTitle eyebrow="CHAPTER 03" title="饮茶时刻" /></Reveal>
         <Reveal className="panel"><Heatmap /></Reveal>
         <div className="split-grid">
@@ -178,7 +224,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="chapter page-width">
+      <section className="chapter page-width" id="places">
         <Reveal><ChapterTitle eyebrow="CHAPTER 04" title="杯行何处" /></Reveal>
         <Reveal className="panel map-panel"><StoreMap /></Reveal>
         <div className="split-grid">
@@ -187,7 +233,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="chapter page-width">
+      <section className="chapter page-width" id="numbers">
         <Reveal><ChapterTitle eyebrow="CHAPTER 05" title="数字有意" /></Reveal>
         <div className="number-story-grid">
           <Reveal className="panel number-card"><span>最常出现</span><strong>{aggregateData.pickup.digits.indexOf(Math.max(...aggregateData.pickup.digits))}</strong></Reveal>
@@ -200,7 +246,7 @@ function HomePage() {
         </Reveal>
       </section>
 
-      <section className="chapter page-width">
+      <section className="chapter page-width" id="calendar">
         <Reveal><ChapterTitle eyebrow="CHAPTER 06" title="杯盏日历" /></Reveal>
         <Reveal className="panel"><CalendarHeatmap /></Reveal>
       </section>
@@ -210,6 +256,7 @@ function HomePage() {
         <i aria-hidden="true" />
       </section>
       <AtlasSection />
+      <ChapterRail />
     </main>
   );
 }
@@ -249,20 +296,20 @@ function Heatmap() {
     visualMap: { min: 0, max: maxValue, show: false, inRange: { color: ["#f1f1ef", "#c7c7c2", "#797974", ink] } },
     series: [{ type: "heatmap", data: values, label: { show: true, color: "#666" }, itemStyle: { borderRadius: 7, borderColor: "#fff", borderWidth: 4 } }],
   };
-  return <><div className="panel-heading"><div><h3>星期 × 时段分布</h3><p>颜色越深，越常在这个时刻下单。</p></div><span>08—22</span></div><ReactECharts option={option} style={{ height: 350 }} /></>;
+  return <><div className="panel-heading"><div><h3>星期 × 时段分布</h3><p>颜色越深，越常在这个时刻下单。</p></div><span>08—22</span></div><LazyChart option={option} height={350} /></>;
 }
 
 function ChannelChart() {
   const channels = unique(orders.map((order) => order.channel)).map((name) => ({ name, value: orders.filter((order) => order.channel === name).length }));
   const option = { tooltip: { trigger: "item" }, color: [ink, gold, "#c7c5c0", "#ecebe8"], series: [{ type: "pie", radius: ["55%", "76%"], center: ["45%", "52%"], data: channels, label: { formatter: "{b}\n{d}%", color: "#555" }, itemStyle: { borderColor: "#fff", borderWidth: 4 } }] };
-  return <><h3>下单渠道</h3><p className="panel-note">按有效订单统计</p><ReactECharts option={option} style={{ height: 310 }} /></>;
+  return <><h3>下单渠道</h3><p className="panel-note">按有效订单统计</p><LazyChart option={option} height={310} /></>;
 }
 
 function PriceBands() {
   const bands = [["0 元", 0, 0.01], ["0–15", 0.01, 15], ["15–20", 15, 20], ["20–30", 20, 30], ["30–50", 30, 50], ["50+", 50, Infinity]] as const;
   const data = bands.map(([name, min, max]) => ({ name, value: orders.filter((order) => order.amount >= min && order.amount < max).length }));
   const option = { grid: { left: 36, right: 20, top: 32, bottom: 42 }, xAxis: { type: "category", data: data.map((d) => d.name), axisLine: { lineStyle: { color: "#ddd" } }, axisTick: { show: false } }, yAxis: { type: "value", splitLine: { lineStyle: { color: "#eee" } } }, series: [{ type: "bar", data: data.map((d) => d.value), itemStyle: { color: ink, borderRadius: [5, 5, 0, 0] }, label: { show: true, position: "top" } }] };
-  return <><h3>订单价格带</h3><p className="panel-note">一杯与一单之间的日常尺度</p><ReactECharts option={option} style={{ height: 310 }} /></>;
+  return <><h3>订单价格带</h3><p className="panel-note">一杯与一单之间的日常尺度</p><LazyChart option={option} height={310} /></>;
 }
 
 function StoreMap() {
@@ -312,7 +359,7 @@ function StoreMap() {
     }],
   };
 
-  return <><div className="panel-heading"><div><h3>门店足迹</h3><p>拖动与缩放地图，悬停查看具体门店。</p></div><span>{stores.length} 家</span></div><div className="store-map">{mapReady ? <ReactECharts option={mapOption} style={{ height: "100%" }} /> : <span>地图载入中</span>}</div></>;
+  return <><div className="panel-heading"><div><h3>门店足迹</h3><p>拖动与缩放地图，悬停查看具体门店。</p></div><span>{stores.length} 家</span></div><div className="store-map">{mapReady ? <LazyChart option={mapOption} height="100%" /> : <span>地图载入中</span>}</div></>;
 }
 
 function CityRanks() {
@@ -344,15 +391,18 @@ function CalendarHeatmap() {
 
 function AtlasSection() {
   const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query.trim());
   const [series, setSeries] = useState("全部系列");
   const [year, setYear] = useState("全部年份");
   const [status, setStatus] = useState("全部状态");
   const [sort, setSort] = useState("series");
   const [selected, setSelected] = useState<Product | null>(null);
+  const dirty = query !== "" || series !== "全部系列" || year !== "全部年份" || status !== "全部状态" || sort !== "series";
+  const reset = () => { setQuery(""); setSeries("全部系列"); setYear("全部年份"); setStatus("全部状态"); setSort("series"); };
   const seriesOptions = ["全部系列", ...unique(products.map((product) => product.series))];
   const yearOptions = ["全部年份", ...unique(products.map((product) => String(product.year))).sort().reverse()];
   const filtered = products.filter((product) => {
-    const queryMatch = product.name.toLowerCase().includes(query.toLowerCase());
+    const queryMatch = `${product.name}${product.series}${product.version}`.toLowerCase().includes(deferredQuery.toLowerCase());
     const seriesMatch = series === "全部系列" || product.series === series;
     const yearMatch = year === "全部年份" || String(product.year) === year;
     const statusMatch = status === "全部状态" || (status === "已饮" ? product.cupCount > 0 : product.cupCount === 0);
@@ -369,39 +419,68 @@ function AtlasSection() {
       <select value={status} onChange={(event) => setStatus(event.target.value)} aria-label="筛选饮用状态"><option>全部状态</option><option>已饮</option><option>未饮</option></select>
       <select value={sort} onChange={(event) => setSort(event.target.value)} aria-label="排序"><option value="series">按系列</option><option value="year">按年份</option><option value="cups">按杯数</option></select>
     </div>
-    <p className="result-count">显示 {filtered.length} / {products.length} 项</p>
+    <div className="result-bar"><p className="result-count">显示 {filtered.length} / {products.length} 项</p>{dirty && <button className="reset-filters" onClick={reset}><RotateCcw />清除筛选</button>}</div>
+    {filtered.length === 0 && <div className="empty-state"><CupSoda aria-hidden="true" /><p>没有找到匹配的产品</p><button onClick={reset}>清除筛选</button></div>}
     {sort === "series" ? <div className="catalog-groups">{unique(filtered.map((product) => product.series)).map((group) => <section key={group}><header><h2>{group}</h2><span>{filtered.filter((product) => product.series === group).length} 项</span></header><div className="product-grid">{filtered.filter((product) => product.series === group).map((product, index) => <ProductCard product={product} index={index} key={product.id} onSelect={() => setSelected(product)} />)}</div></section>)}</div> : <div className="product-grid">{filtered.map((product, index) => <ProductCard product={product} index={index} key={product.id} onSelect={() => setSelected(product)} />)}</div>}
-    <AnimatePresence>{selected && <ProductDrawer product={selected} onClose={() => setSelected(null)} />}</AnimatePresence>
+    <AnimatePresence>{selected && <ProductDrawer product={selected} list={filtered} onSelect={setSelected} onClose={() => setSelected(null)} />}</AnimatePresence>
   </section>;
+}
+
+function FadeImage({ src, alt }: { src: string; alt: string }) {
+  const [loaded, setLoaded] = useState(false);
+  return <img src={src} alt={alt} loading="lazy" decoding="async" className={loaded ? "img-loaded" : "img-loading"} onLoad={() => setLoaded(true)} />;
 }
 
 function ProductCard({ product, index, onSelect }: { product: Product; index: number; onSelect: () => void }) {
   const tried = product.cupCount > 0;
-  return <motion.button className={`product-card ${tried ? "tried" : "untried"}`} onClick={onSelect} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: Math.min(index * 0.025, 0.4) }}>
+  return <motion.button className={`product-card ${tried ? "tried" : "untried"}`} onClick={onSelect} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "0px 0px 80px 0px" }} transition={{ duration: 0.4, delay: Math.min((index % 6) * 0.04, 0.2) }}>
     <div className="product-art" style={{ "--drink": product.color } as React.CSSProperties}>
-      {product.image ? <img src={product.image} alt={product.name} /> : <ProductIllustration product={product} />}
+      {product.image ? <FadeImage src={product.image} alt={product.name} /> : <ProductIllustration product={product} />}
       <span>{tried ? `${product.cupCount} 杯` : "未饮"}</span>
     </div>
     <div className="product-copy"><small>{product.series} · {product.year || "年份待考"}</small><h3>{product.name}</h3><p>{product.version}</p></div>
   </motion.button>;
 }
 
-function ProductDrawer({ product, onClose }: { product: Product; onClose: () => void }) {
+function ProductDrawer({ product, list, onSelect, onClose }: { product: Product; list: Product[]; onSelect: (product: Product) => void; onClose: () => void }) {
   const matching = orders.filter((order) => order.items.some((item) => item.rawName === product.name));
+  const position = list.findIndex((item) => item.id === product.id);
+  const previous = position > 0 ? list[position - 1] : undefined;
+  const next = position >= 0 && position < list.length - 1 ? list[position + 1] : undefined;
+  const asideRef = useRef<HTMLElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
+    const opener = document.activeElement as HTMLElement | null;
     document.body.style.overflow = "hidden";
-    const handleKey = (event: KeyboardEvent) => event.key === "Escape" && onClose();
-    window.addEventListener("keydown", handleKey);
+    closeRef.current?.focus();
     return () => {
       document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", handleKey);
+      opener?.focus?.();
     };
-  }, [onClose]);
+  }, []);
+  useEffect(() => {
+    asideRef.current?.scrollTo({ top: 0 });
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+      else if (event.key === "ArrowLeft" && previous) onSelect(previous);
+      else if (event.key === "ArrowRight" && next) onSelect(next);
+      else if (event.key === "Tab") {
+        const focusable = asideRef.current?.querySelectorAll<HTMLElement>("button, a[href]");
+        if (!focusable?.length) return;
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [onClose, onSelect, previous, next]);
   return <motion.div className="drawer-layer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} role="dialog" aria-modal="true" aria-label={product.name} onMouseDown={(event) => event.currentTarget === event.target && onClose()}>
-    <motion.aside initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", damping: 30, stiffness: 260 }}>
-      <button className="drawer-close" onClick={onClose} aria-label="关闭"><X /></button>
-      <div className="drawer-hero" style={{ "--drink": product.color } as React.CSSProperties}>{product.image ? <img src={product.image} alt={product.name} /> : <ProductIllustration product={product} />}<span>{product.series}</span></div>
+    <motion.aside ref={asideRef} initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", damping: 30, stiffness: 260 }}>
+      <button ref={closeRef} className="drawer-close" onClick={onClose} aria-label="关闭"><X /></button>
+      <div className="drawer-pager"><button onClick={() => previous && onSelect(previous)} disabled={!previous} aria-label="上一个产品"><ChevronLeft /><span>{previous?.name ?? "已是第一个"}</span></button><em>{position + 1} / {list.length}</em><button onClick={() => next && onSelect(next)} disabled={!next} aria-label="下一个产品"><span>{next?.name ?? "已是最后一个"}</span><ChevronRight /></button></div>
+      <div className="drawer-hero" style={{ "--drink": product.color } as React.CSSProperties}>{product.image ? <img key={product.id} src={product.image} alt={product.name} decoding="async" /> : <ProductIllustration product={product} />}<span>{product.series}</span></div>
       <p className="kicker">{product.year || "年份待考"} · {product.version}{product.availability ? ` · ${product.availability}` : ""}</p><h2>{product.name}</h2>
       <div className="drawer-stats"><article><span>喝过</span><strong>{product.cupCount}</strong><small>杯</small></article><article><span>涉及</span><strong>{product.orderCount}</strong><small>单</small></article><article><span>到访</span><strong>{product.stores.length}</strong><small>店</small></article></div>
       <div className="detail-pairs"><div><span>首次购买</span><b>{product.firstPurchased ?? "尚未喝过"}</b></div><div><span>最近一次</span><b>{product.lastPurchased ?? "—"}</b></div><div><span>覆盖城市</span><b>{product.cities.join("、") || "—"}</b></div><div><span>图片状态</span><b>{product.imageStatus === "official" ? "官方资料" : product.imageStatus === "verified" ? "公开资料" : product.imageStatus === "illustrated" ? "统一插画" : "资料待补"}</b></div></div>

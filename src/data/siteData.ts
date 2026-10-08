@@ -118,7 +118,6 @@ const localProductImages: Record<string, string> = {
   "拿铁": "xi-cha-ka-fei.jpg",
   "芋泥波波牛乳": "yu-ni-bo-bo-niu-ru.jpg",
   "芝芝金凤茶王": "zhi-zhi-jin-feng-cha-wang.jpg",
-  "芝芝绿妍": "zhi-zhi-lv-yan.jpg",
   "芝芝芒芒": "zhi-zhi-mang-mang.jpg",
   "芝芝莓莓": "zhi-zhi-mei-mei.jpg",
 };
@@ -134,7 +133,6 @@ const illustratedSupplementals = new Set([
   "四季春",
   "芋泥波波牛乳",
   "芝芝金凤茶王",
-  "芝芝绿妍",
   "芝芝芒芒",
   "芝芝莓莓",
 ]);
@@ -151,6 +149,7 @@ const supplementalImageAliases: Record<string, string> = {
   "羽衣甘蓝纤体瓶": "羽衣纤体瓶（首创）",
   "芝芝绿妍茶后": "芝芝绿妍茶后（首创）",
   "周三·一茶两酥": "一茶一酥",
+  "芝芝绿妍": "芝芝绿妍茶后（首创）",
 };
 
 const catalogByName = new Map(generatedCatalog.map((product) => [product.name, product]));
